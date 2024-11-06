@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="./src/index.css" />
   </head>
   <body>
-    <!-- <div id="root"></div> -->
+    <div id="root"></div>
     <div id="app">
-      <div id="ui"></div>
-      <canvas id="game"></canvas>
+      <div id="ui">
+        <!-- This is probably what can be replaced by REACT the game UI -->
+        <!-- #app has position relative, might want to make sure REACT UI isn't the same -->
+        <p class="note">Tap/Click around to move</p>
+        <div id="textbox-container" style="display: none">
+          <div id="textbox">
+            <p id="dialogue" class="ui-text"></p>
+            <div class="btn-container">
+              <button id="close" class="ui-close-btn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas id="game" width="400" height="300"></canvas>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
