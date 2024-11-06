@@ -5,7 +5,6 @@ import { scaleFactor } from "./constants";
 import { displayDialogue } from "./utils";
 import { k } from "./kaboomCtx";
 
-
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
   sliceY: 31,
@@ -85,12 +84,12 @@ k.scene("main", async () => {
           });
         }
       }
-      //continue;
+      continue;
     }
 
     if (layer.name === "spawnpoint") {
       for (const entity of layer.objects) {
-        if (entity.name === "player") {
+        if (entity.name === "spawn") {
           player.pos = k.vec2(
             (map.pos.x + entity.x) * scaleFactor,
             (map.pos.y + entity.y) * scaleFactor
@@ -103,6 +102,13 @@ k.scene("main", async () => {
 
   k.onUpdate(() => {
     k.camPos(player.pos.x, player.pos.y + 100);
+  });
+
+  k.onMouseDown((mouseBtn) => {
+    if (mouseBtn !== "left" || player.isInDialogue) return;
+
+    const worldMousePos = k.toWorld(k.mousePos());
+    player.moveTo(worldMousePos, player.speed)
   });
 });
 

@@ -24,7 +24,7 @@ export function displayDialogue(text, onDisplayEnd) {
     dialogue.innerHTML = "";
     clearInterval(intervalRef);
     closeBtn.removeEventListener("click", onCloseBtnClick);
-
-    closeBtn.addEventListener("click", onCloseBtnClick);
   }
+
+  closeBtn.addEventListener("click", onCloseBtnClick);
 }

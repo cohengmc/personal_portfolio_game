@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: flex-start;
   word-spacing: 0.2rem;
   filter: drop-shadow(0 0 0.75rem rgb(112, 112, 112));
 }
@@ -37,18 +38,18 @@ body {
   margin: 0;
   user-select: none;
 }
-
 .ui-close-btn {
   font-family: inherit;
   border-style: none;
   border-radius: 3px;
   padding: 1rem;
   font-size: inherit;
+  user-select: none;
 }
 
-.btn-containter {
+.btn-container {
   align-self: flex-end;
-  margin-top: 1rem;
+  margin-top: auto;
 }
 
 .note {
