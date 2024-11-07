@@ -1,4 +1,4 @@
-export const scaleFactor = 3;
+export const SCALEFACTOR = 3;
 
 export const dialogueData = {
   key: "You found a key!",

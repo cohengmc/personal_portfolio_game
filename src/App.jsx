@@ -1,4 +1,3 @@
-import { useState } from "react";
 import menuScene from "./scenes/menu";
 import homeScene from "./scenes/home";
 import projectScene from "./scenes/projects";
@@ -37,9 +36,9 @@ function App() {
       <p className="note">Tap/Click around to move</p>
       <div id="textbox-container" style={{display: "none"}}>
         <div id="textbox">
-          <p id="dialogue" className="ui-text"></p>
+          <p id="dialogue" className="ui-text"/>
           <div className="btn-container">
-            <button id="close" className="ui-btn">
+            <button type="button" id="close" className="ui-btn">
               Close
             </button>
           </div>
