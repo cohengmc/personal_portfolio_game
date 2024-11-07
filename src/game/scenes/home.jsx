@@ -1,7 +1,7 @@
-import { k } from "../kaboomCtx";
-import { dialogueData, SCALEFACTOR } from "../constants";
-import { displayDialogue, setCamScale } from "../utils";
-import { mouseMovementHelper } from "../movement";
+import { k } from "../../kaboomCtx";
+import { SCALEFACTOR } from "../../constants";
+import { setCamScale } from "../utils";
+import { mouseMovementHelper, setControlsHelper } from "../movement";
 
 export default async function homeScene() {
   k.onKeyPress("8", () => k.go("projects"));
@@ -40,7 +40,7 @@ export default async function homeScene() {
     {
       speed: 60 * SCALEFACTOR,
       direction: "down",
-      isInDialogue: false,
+      collisionItem: "",
 
       setControls() {
         setControlsHelper(k, this);
@@ -64,11 +64,15 @@ export default async function homeScene() {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
-            player.isInDialogue = true;
+            if (boundary.name === "doorProjects") {
+              k.go("home");
+            } else {
+              player.collisionItem = boundary.name;
+            }
+          });
 
-            displayDialogue(dialogueData[boundary.name], () => {
-              player.isInDialogue = false;
-            });
+          player.onCollideEnd(boundary.name, () => {
+            player.collisionItem = "";
           });
         }
       }

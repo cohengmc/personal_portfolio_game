@@ -1,4 +1,4 @@
-import { k } from "../kaboomCtx";
+import { k } from "../../kaboomCtx";
 
 export default function menuScene() {
 
