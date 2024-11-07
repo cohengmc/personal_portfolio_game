@@ -2,7 +2,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { dialogueData, scaleFactor } from "./constants";
-import { displayDialogue, setCamScale } from "./utils";
+import {
+  displayDialogue,
+  setCamScale,
+  releaseHelper,
+  movementHelper,
+} from "./utils";
 import { k } from "./kaboomCtx";
 
 k.loadSprite("spritesheet", "./spritesheet.png", {
@@ -54,9 +59,53 @@ k.scene("main", async () => {
 
     //hold properties within an game object by passing in an object with any properties you want. so player.speed = 250 but we can make anything like adding hand: "left" then player.hand would be left
     {
-      speed: 60*scaleFactor,
+      speed: 60 * scaleFactor,
       direction: "down",
       isInDialogue: false,
+      //movement: [0, 0, 0, 0], // Up, Down, Left, Right // DIAGANOL
+
+      setControls() {
+        k.onButtonDown("up", () => {
+          player.move(0, -this.speed);
+          movementHelper(player, "up");
+        });
+
+        k.onButtonDown("down", () => {
+          player.move(0, this.speed);
+          movementHelper(player, "down");
+        });
+
+        k.onButtonDown("right", () => {
+          player.move(this.speed, 0);
+          movementHelper(player, "right");
+        });
+
+        k.onButtonDown("left", () => {
+          player.move(-this.speed, 0);
+          movementHelper(player, "left");
+        });
+
+        // DIAGANOL
+        // k.onButtonPress("up", () => {
+        //   this.movement[0] = 1;
+        // });
+
+        // k.onButtonPress("down", () => {
+        //   this.movement[1] = 1;
+        // });
+
+        // k.onButtonPress("left", () => {
+        //   this.movement[2] = 1;
+        // });
+
+        // k.onButtonPress("right", () => {
+        //   this.movement[3] = 1;
+        // });
+
+        k.onButtonRelease(() => {
+          releaseHelper(this);
+        });
+      },
     },
     // tag for this game object - way to identify the game object
     "player",
@@ -110,6 +159,8 @@ k.scene("main", async () => {
     k.camPos(player.pos.x, player.pos.y + 100);
   });
 
+  player.setControls();
+
   k.onMouseDown((mouseBtn) => {
     if (mouseBtn !== "left" || player.isInDialogue) return;
 
@@ -121,14 +172,12 @@ k.scene("main", async () => {
     const lowerBound = 50;
     const upperBound = 125;
 
-    console.log(player.getCurAnim().name, mouseAngle);
     if (
       mouseAngle > lowerBound &&
       mouseAngle < upperBound &&
       player.getCurAnim().name !== "walk-up"
     ) {
-      player.play("walk-up");
-      player.direction = "up";
+      movementHelper(player, "up");
       return;
     }
 
@@ -137,37 +186,23 @@ k.scene("main", async () => {
       mouseAngle > -upperBound &&
       player.getCurAnim().name !== "walk-down"
     ) {
-      player.play("walk-down");
-      player.direction = "down";
+      movementHelper(player, "down");
       return;
     }
 
     if (Math.abs(mouseAngle) > upperBound) {
-      player.flipX = false;
-      if (player.getCurAnim().name !== "walk-side") player.play("walk-side");
-      player.direction = "right";
+      movementHelper(player, "right");
       return;
     }
 
     if (Math.abs(mouseAngle) < lowerBound) {
-      player.flipX = true;
-      if (player.getCurAnim().name !== "walk-side") player.play("walk-side");
-      player.direction = "left";
+      movementHelper(player, "left");
       return;
     }
   });
 
   k.onMouseRelease(() => {
-    if (player.direction === "down") {
-      player.play("idle-down");
-      return;
-    }
-    if (player.direction === "up") {
-      player.play("idle-up");
-      return;
-    }
-
-    player.play("idle-side");
+    releaseHelper(player);
   });
 });
 

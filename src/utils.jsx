@@ -39,3 +39,34 @@ export function setCamScale(k) {
 
   k.camScale(k.vec2(1.5));
 }
+
+export function releaseHelper(player) {
+  if (player.direction === "down") {
+    player.play("idle-down");
+    return;
+  }
+  if (player.direction === "up") {
+    player.play("idle-up");
+    return;
+  }
+
+  player.play("idle-side");
+  // player.movement = [0,0,0,0] //// DIAGANOL
+}
+
+export function movementHelper(player, direction) {
+  let sideOrDirection = direction;
+  if (direction === "right") {
+    sideOrDirection = "side";
+    player.flipX = false;
+  }
+  if (direction === "left") {
+    sideOrDirection = "side";
+    player.flipX = true;
+  }
+  player.direction = direction;
+
+  if (player.getCurAnim().name !== `walk-${sideOrDirection}`) {
+    player.play(`walk-${sideOrDirection}`);
+  }
+}
