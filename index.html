@@ -2,29 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io/favicon-16x16.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geoff's Portfolio</title>
     <link rel="stylesheet" href="./src/index.css" />
   </head>
   <body>
-    <div id="root"></div>
     <div id="app">
-      <div id="ui">
-        <!-- This is probably what can be replaced by REACT the game UI -->
-        <!-- #app has position relative, might want to make sure REACT UI isn't the same -->
-        <p class="note">Tap/Click around to move</p>
-        <div id="textbox-container" style="display: none">
-          <div id="textbox">
-            <p id="dialogue" class="ui-text"></p>
-            <div class="btn-container">
-              <button id="close" class="ui-btn">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="root"></div>
       <canvas id="game" width="400" height="300"></canvas>
     </div>
     <script type="module" src="/src/main.jsx"></script>
