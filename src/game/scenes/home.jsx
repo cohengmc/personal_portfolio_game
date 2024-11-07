@@ -65,7 +65,7 @@ export default async function homeScene() {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorProjects") {
-              k.go("home");
+              k.go("projects");
             } else {
               player.collisionItem = boundary.name;
             }
