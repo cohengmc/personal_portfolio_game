@@ -3,7 +3,7 @@ import { SCALEFACTOR } from "../../constants";
 import { setCamScale } from "../utils";
 import { mouseMovementHelper, setControlsHelper } from "../movement";
 
-export default async function projectScene() {
+export default async function projectScene(spawn) {
   k.onKeyPress("8", () => k.go("main"));
   k.loadSprite("map", "./mapProjects.png");
   k.setBackground(k.Color.fromHex("#C0AFE2"));
@@ -14,7 +14,7 @@ export default async function projectScene() {
   const map = k.add([k.sprite("map"), k.pos(0), k.scale(SCALEFACTOR)]);
 
   const player = k.make([
-    k.sprite("spritesheet", { anim: "idle-down" }),
+    k.sprite("dl_sprite", { anim: "idle-down" }),
     k.area({
       shape: new k.Rect(k.vec2(0, 3), 10, 10),
     }),
@@ -50,7 +50,7 @@ export default async function projectScene() {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorHome") {
-              k.go("home");
+              k.go("home", "spawnDoorProjects");
             } else {
               player.collisionItem = boundary.name;
             }
@@ -66,7 +66,7 @@ export default async function projectScene() {
 
     if (layer.name === "spawnpoint") {
       for (const entity of layer.objects) {
-        if (entity.name === "spawn") {
+        if (entity.name === spawn) {
           player.pos = k.vec2(
             (map.pos.x + entity.x) * SCALEFACTOR,
             (map.pos.y + entity.y) * SCALEFACTOR

@@ -18,6 +18,19 @@ export default function startGame() {
     },
   });
 
+  k.loadSprite("dl_sprite", "./Deeplocal_Friend_v1.png", {
+    sliceX: 4,
+    sliceY: 1,
+    anims: {
+      "idle-down": { from: 1, to: 2, loop: true, speed: 8 },
+      "walk-down": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-side": { from: 1, to: 2, loop: true, speed: 8 },
+      "walk-side": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-up": { from: 1, to: 2, loop: true, speed: 8 },
+      "walk-up": { from: 0, to: 3, loop: true, speed: 8 },
+    },
+  });
+
   // Default Map and Background Color
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
@@ -28,5 +41,5 @@ export default function startGame() {
   k.scene("projects", projectScene);
 
   // Default Scene - go to Scene - Scene "Main"
-  k.go("projects");
+  k.go("projects", "spawn");
 }

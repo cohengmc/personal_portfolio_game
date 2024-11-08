@@ -3,7 +3,7 @@ import { SCALEFACTOR } from "../../constants";
 import { setCamScale } from "../utils";
 import { mouseMovementHelper, setControlsHelper } from "../movement";
 
-export default async function homeScene() {
+export default async function homeScene(spawn) {
   k.onKeyPress("8", () => k.go("projects"));
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
@@ -65,7 +65,7 @@ export default async function homeScene() {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorProjects") {
-              k.go("projects");
+              k.go("projects", "spawn");
             } else {
               player.collisionItem = boundary.name;
             }
@@ -81,7 +81,7 @@ export default async function homeScene() {
 
     if (layer.name === "spawnpoint") {
       for (const entity of layer.objects) {
-        if (entity.name === "spawn") {
+        if (entity.name === spawn) {
           player.pos = k.vec2(
             (map.pos.x + entity.x) * SCALEFACTOR,
             (map.pos.y + entity.y) * SCALEFACTOR

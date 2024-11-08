@@ -9,7 +9,6 @@ function App() {
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			const item = k.get("player")[0].collisionItem;
-			// if(item !== collisionItem)
 			setCollisionItem(item);
 		}, 10);
 

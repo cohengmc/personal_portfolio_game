@@ -377,6 +377,18 @@
                  "width":0,
                  "x":34.6166440566965,
                  "y":269.448472657529
+                }, 
+                {
+                 "height":0,
+                 "id":40,
+                 "name":"spawnDoorProjects",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":298.5,
+                 "y":210
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -385,7 +397,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":40,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
