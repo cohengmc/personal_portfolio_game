@@ -1,6 +1,10 @@
 import menuScene from "./scenes/menu";
 import homeScene from "./scenes/home";
 import projectScene from "./scenes/projects";
+import englishScene from "./scenes/english";
+import portfolioScene from "./scenes/portfolio";
+import workoutScene from "./scenes/workout";
+import communityScene from "./scenes/community";
 import { k } from "../kaboomCtx";
 
 export default function startGame() {
@@ -44,6 +48,19 @@ export default function startGame() {
     },
   });
 
+  k.loadSprite("Geoff_Sprite", "./Geoff_Sprite.png", {
+    sliceX: 16,
+    sliceY: 1,
+    anims: {
+      "idle-down": { from: 12, to: 13, loop: true, speed: 2 },
+      "walk-down": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-side": { from: 4, to: 5, loop: true, speed: 2 },
+      "walk-side": { from: 4, to: 7, loop: true, speed: 8 },
+      "idle-up": { from: 14, to: 15, loop: true, speed: 2 },
+      "walk-up": { from: 8, to: 11, loop: true, speed: 8 },
+    },
+  });
+
   // Default Map and Background Color
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
@@ -52,7 +69,11 @@ export default function startGame() {
   k.scene("menu", menuScene);
   k.scene("home", homeScene);
   k.scene("projects", projectScene);
+  k.scene("english", englishScene);
+  k.scene("workout", workoutScene);
+  k.scene("community", communityScene);
+  k.scene("portfolio", portfolioScene);
 
   // Default Scene - go to Scene - Scene "Main"
-  k.go("projects", "spawn");
+  k.go("home", "spawn");
 }

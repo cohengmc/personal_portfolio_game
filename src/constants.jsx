@@ -1,4 +1,5 @@
 export const SCALEFACTOR = 3;
+export const BACKGROUNDCOLOR = "#333333"
 
 export const dialogueData = {
   key: "You found a key!",

@@ -1,10 +1,13 @@
 import { k } from "../../kaboomCtx";
 import { SCALEFACTOR } from "../../constants";
-import { setCamScale } from "../utils";
+import {
+  sceneHelper,
+  goToSpawnHelper,
+  makeBoundariesSolidHelper,
+} from "../utils";
 import { mouseMovementHelper, setControlsHelper } from "../movement";
 
 export default async function homeScene(spawn) {
-  k.onKeyPress("8", () => k.go("projects"));
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
 
@@ -22,7 +25,7 @@ export default async function homeScene(spawn) {
 
   const player = k.make([
     // passing the spritesheet with a default animation (specified above in ./loadSprite)
-    k.sprite("dl_logo", { anim: "idle-down" }),
+    k.sprite("Geoff_Sprite", { anim: "idle-down" }),
 
     //.area -> creates hitbox for our game object (in this case player)
     k.area({
@@ -53,19 +56,12 @@ export default async function homeScene(spawn) {
   for (const layer of layers) {
     if (layer.name === "boundaries") {
       for (const boundary of layer.objects) {
-        map.add([
-          k.area({
-            shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
-          }),
-          k.body({ isStatic: true }),
-          k.pos(boundary.x, boundary.y),
-          boundary.name,
-        ]);
+        makeBoundariesSolidHelper(k, boundary, map);
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorProjects") {
-              k.go("projects", "spawn");
+              k.go("english", "spawnDoor");
             } else {
               player.collisionItem = boundary.name;
             }
@@ -79,29 +75,8 @@ export default async function homeScene(spawn) {
       continue;
     }
 
-    if (layer.name === "spawnpoint") {
-      for (const entity of layer.objects) {
-        if (entity.name === spawn) {
-          player.pos = k.vec2(
-            (map.pos.x + entity.x) * SCALEFACTOR,
-            (map.pos.y + entity.y) * SCALEFACTOR
-          );
-          k.add(player);
-        }
-      }
-    }
+    goToSpawnHelper(k, layer, player, map, spawn);
   }
 
-  setCamScale(k);
-
-  k.onResize(() => {
-    setCamScale(k);
-  });
-
-  k.onUpdate(() => {
-    k.camPos(player.pos.x, player.pos.y + 100);
-  });
-
-  player.setControls();
-  mouseMovementHelper(k, player);
+  sceneHelper(k, player);
 }

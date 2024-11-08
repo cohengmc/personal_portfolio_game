@@ -1,5 +1,5 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR } from "../../constants";
+import { SCALEFACTOR, BACKGROUNDCOLOR } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
@@ -7,11 +7,11 @@ import {
 } from "../utils";
 import { setControlsHelper } from "../movement";
 
-export default async function projectScene(spawn) {
-  k.loadSprite("map", "./mapProjects.png");
-  k.setBackground(k.Color.fromHex("#C0AFE2"));
+export default async function workoutScene(spawn) {
+  k.loadSprite("map", "./mapWorkoutTracker.png");
+  k.setBackground(k.Color.fromHex(BACKGROUNDCOLOR));
 
-  const mapData = await (await fetch("./mapProjects.json")).json();
+  const mapData = await (await fetch("./mapWorkoutTracker.json")).json();
   const layers = mapData.layers;
 
   const map = k.add([k.sprite("map"), k.pos(0), k.scale(SCALEFACTOR)]);
@@ -44,8 +44,10 @@ export default async function projectScene(spawn) {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
-            if (boundary.name === "doorHome") {
-              k.go("home", "spawnDoorProjects");
+            if (boundary.name === "doorEnglish") {
+              k.go("english", "spawnWorkout");
+            } else if (boundary.name === "doorCommunity") {
+              k.go("community", "spawnWorkout");
             } else {
               player.collisionItem = boundary.name;
             }
