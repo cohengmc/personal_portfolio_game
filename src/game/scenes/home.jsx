@@ -22,7 +22,7 @@ export default async function homeScene(spawn) {
 
   const player = k.make([
     // passing the spritesheet with a default animation (specified above in ./loadSprite)
-    k.sprite("spritesheet", { anim: "idle-down" }),
+    k.sprite("dl_logo", { anim: "idle-down" }),
 
     //.area -> creates hitbox for our game object (in this case player)
     k.area({

@@ -31,6 +31,19 @@ export default function startGame() {
     },
   });
 
+  k.loadSprite("dl_logo", "./Deeplocal_Logo.png", {
+    sliceX: 10,
+    sliceY: 1,
+    anims: {
+      "idle-down": { from: 0, to: 9, loop: true, speed: 18 },
+      "walk-down": { from: 0, to: 9, loop: true, speed: 18 },
+      "idle-side": { from: 0, to: 9, loop: true, speed: 18 },
+      "walk-side": { from: 0, to: 9, loop: true, speed: 18 },
+      "idle-up": { from: 0, to: 9, loop: true, speed: 18 },
+      "walk-up": { from: 0, to: 9, loop: true, speed: 18 },
+    },
+  });
+
   // Default Map and Background Color
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
