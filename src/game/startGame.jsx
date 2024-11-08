@@ -22,11 +22,11 @@ export default function startGame() {
     sliceX: 4,
     sliceY: 1,
     anims: {
-      "idle-down": { from: 1, to: 2, loop: true, speed: 8 },
+      "idle-down": { from: 0, to: 3, loop: true, speed: 8 },
       "walk-down": { from: 0, to: 3, loop: true, speed: 8 },
-      "idle-side": { from: 1, to: 2, loop: true, speed: 8 },
+      "idle-side": { from: 0, to: 3, loop: true, speed: 8 },
       "walk-side": { from: 0, to: 3, loop: true, speed: 8 },
-      "idle-up": { from: 1, to: 2, loop: true, speed: 8 },
+      "idle-up": { from: 0, to: 3, loop: true, speed: 8 },
       "walk-up": { from: 0, to: 3, loop: true, speed: 8 },
     },
   });
