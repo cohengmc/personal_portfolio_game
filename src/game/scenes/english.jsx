@@ -4,6 +4,7 @@ import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
+  deepLocalSpawnHelper,
 } from "../utils";
 import { setControlsHelper } from "../movement";
 
@@ -64,6 +65,7 @@ export default async function englishScene(spawn) {
     }
 
     goToSpawnHelper(k, layer, player, map, spawn);
+    deepLocalSpawnHelper(k, layer, map);
   }
 
   sceneHelper(k, player);

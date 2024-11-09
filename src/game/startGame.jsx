@@ -39,12 +39,7 @@ export default function startGame() {
     sliceX: 10,
     sliceY: 1,
     anims: {
-      "idle-down": { from: 0, to: 9, loop: true, speed: 18 },
-      "walk-down": { from: 0, to: 9, loop: true, speed: 18 },
-      "idle-side": { from: 0, to: 9, loop: true, speed: 18 },
-      "walk-side": { from: 0, to: 9, loop: true, speed: 18 },
-      "idle-up": { from: 0, to: 9, loop: true, speed: 18 },
-      "walk-up": { from: 0, to: 9, loop: true, speed: 18 },
+      "spin-logo": { from: 0, to: 9, loop: true, speed: 12 },
     },
   });
 
@@ -58,6 +53,19 @@ export default function startGame() {
       "walk-side": { from: 4, to: 7, loop: true, speed: 8 },
       "idle-up": { from: 14, to: 15, loop: true, speed: 2 },
       "walk-up": { from: 8, to: 11, loop: true, speed: 8 },
+    },
+  });
+
+  k.loadSprite("Cuberover_Sprite", "./Cuberover_Sprite.png", {
+    sliceX: 16,
+    sliceY: 1,
+    anims: {
+      "idle-down": { from: 14, to: 15, loop: true, speed: 2 },
+      "walk-down": { from: 4, to: 5, loop: true, speed: 4 },
+      "idle-side": { from: 10, to: 11, loop: true, speed: 2 },
+      "walk-side": { from: 8, to: 9, loop: true, speed: 4 },
+      "idle-up": { from: 12, to: 13, loop: true, speed: 2 },
+      "walk-up": { from: 6, to: 7, loop: true, speed: 4 },
     },
   });
 
@@ -75,5 +83,7 @@ export default function startGame() {
   k.scene("portfolio", portfolioScene);
 
   // Default Scene - go to Scene - Scene "Main"
-  k.go("home", "spawn");
+  // k.go("english", "spawnDoor");
+  // k.go("home", "spawn");
+  k.go("workout", "spawnEnglish");
 }

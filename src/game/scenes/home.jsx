@@ -4,6 +4,7 @@ import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
+  deepLocalSpawnHelper,
 } from "../utils";
 import { mouseMovementHelper, setControlsHelper } from "../movement";
 
@@ -76,6 +77,7 @@ export default async function homeScene(spawn) {
     }
 
     goToSpawnHelper(k, layer, player, map, spawn);
+    deepLocalSpawnHelper(k, layer, map);
   }
 
   sceneHelper(k, player);

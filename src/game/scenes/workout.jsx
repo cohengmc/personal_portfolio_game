@@ -4,6 +4,7 @@ import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
+  deepLocalSpawnHelper,
 } from "../utils";
 import { setControlsHelper } from "../movement";
 
@@ -17,7 +18,7 @@ export default async function workoutScene(spawn) {
   const map = k.add([k.sprite("map"), k.pos(0), k.scale(SCALEFACTOR)]);
 
   const player = k.make([
-    k.sprite("dl_sprite", { anim: "idle-down" }),
+    k.sprite("Cuberover_Sprite", { anim: "idle-down" }),
     k.area({
       shape: new k.Rect(k.vec2(0, 3), 10, 10),
     }),
@@ -62,6 +63,7 @@ export default async function workoutScene(spawn) {
     }
 
     goToSpawnHelper(k, layer, player, map, spawn);
+    deepLocalSpawnHelper(k, layer, map);
   }
 
   sceneHelper(k, player);

@@ -4,6 +4,7 @@ import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
+  deepLocalSpawnHelper,
 } from "../utils";
 import { setControlsHelper } from "../movement";
 
@@ -62,6 +63,7 @@ export default async function portfolioScene(spawn) {
     }
 
     goToSpawnHelper(k, layer, player, map, spawn);
+    deepLocalSpawnHelper(k, layer, map);
   }
 
   sceneHelper(k, player);

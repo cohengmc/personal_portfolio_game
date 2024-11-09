@@ -366,6 +366,61 @@
                  "width":9.35960591133005,
                  "x":323.152709359606,
                  "y":162.56157635468
+                }, 
+                {
+                 "height":28.9156626506024,
+                 "id":44,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":63.0522088353414,
+                 "x":194.779116465863,
+                 "y":119.678714859438
+                }, 
+                {
+                 "height":8.83534136546184,
+                 "id":45,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":10.0401606425703,
+                 "x":194.779116465863,
+                 "y":110.04016064257
+                }, 
+                {
+                 "height":2.40963855421687,
+                 "id":46,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":5.62248995983936,
+                 "x":206.024096385542,
+                 "y":116.867469879518
+                }, 
+                {
+                 "height":3.6144578313253,
+                 "id":47,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":5.22088353413656,
+                 "x":238.955823293173,
+                 "y":115.66265060241
+                }, 
+                {
+                 "height":8.83534136546184,
+                 "id":48,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":12.4497991967872,
+                 "x":244.979919678715,
+                 "y":111.244979919679
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -407,9 +462,32 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"deeplocalSpawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":43,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":311.699525374224,
+                 "y":189.086527929901
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":6,
- "nextobjectid":43,
+ "nextlayerid":7,
+ "nextobjectid":49,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
