@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { k } from "./kaboomCtx";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import Textbox from "./components/Textbox";
 
 function App() {
 	const [collisionItem, setCollisionItem] = useState("");
@@ -22,16 +23,12 @@ function App() {
 	return (
 		<div id="ui">
 			<p className="note">Tap/Click around to move</p>
-			<div id="textbox-container" style={collisionItem.length > 0 ? { display: "block" } : { display: "none" }}>
-				<div id="textbox">
-					<p id="dialogue" className="ui-text">{collisionItem}</p>
-					<div className="btn-container">
+			<Textbox collisionItem={collisionItem} />
+			{/* <div className="btn-container">
 						<button type="button" id="close" className="ui-btn">
 							Close
 						</button>
-					</div>
-				</div>
-			</div>
+					</div> */}
 		</div>
 	);
 }

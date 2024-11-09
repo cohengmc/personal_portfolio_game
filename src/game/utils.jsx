@@ -64,7 +64,7 @@ export function deepLocalSpawnHelper(k, layer, map) {
         k.anchor("center"),
         k.pos(
           k.vec2(
-            (map.pos.x + entity.x) * SCALEFACTOR,
+            (map.pos.x + entity.x) * SCALEFACTOR + 1 * SCALEFACTOR,
             (map.pos.y + entity.y) * SCALEFACTOR - 12 * SCALEFACTOR
           )
         ),

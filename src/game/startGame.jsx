@@ -61,11 +61,11 @@ export default function startGame() {
     sliceY: 1,
     anims: {
       "idle-down": { from: 14, to: 15, loop: true, speed: 2 },
-      "walk-down": { from: 4, to: 5, loop: true, speed: 4 },
+      "walk-down": { from: 4, to: 5, loop: true, speed: 3 },
       "idle-side": { from: 10, to: 11, loop: true, speed: 2 },
       "walk-side": { from: 8, to: 9, loop: true, speed: 4 },
       "idle-up": { from: 12, to: 13, loop: true, speed: 2 },
-      "walk-up": { from: 6, to: 7, loop: true, speed: 4 },
+      "walk-up": { from: 6, to: 7, loop: true, speed: 3 },
     },
   });
 
@@ -83,7 +83,7 @@ export default function startGame() {
   k.scene("portfolio", portfolioScene);
 
   // Default Scene - go to Scene - Scene "Main"
-  // k.go("english", "spawnDoor");
+  k.go("english", "spawnDoor");
   // k.go("home", "spawn");
-  k.go("workout", "spawnEnglish");
+  // k.go("workout", "spawnEnglish");
 }
