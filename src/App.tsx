@@ -2,24 +2,52 @@ import "./App.css";
 import { k } from "./kaboomCtx";
 import React, { useEffect, useState, useRef } from "react";
 import Textbox from "./components/Textbox";
+import { getDLItemTotal } from "./game/utils";
 
 function App() {
 	const [collisionItem, setCollisionItem] = useState("");
 	const [muted, setMuted] = useState(false);
+	const [totalDLItems, setTotalDLItems] = useState(0);
+	const [itemsFound, setItemsFound] = useState([]);
 	const audioRef = useRef(null);
 	const muteButtonRef = useRef(null);
 
 	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await getDLItemTotal();
+				setTotalDLItems(data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		};
+
+		fetchData();
+	}, []);
+
+	useEffect(() => {
 		const intervalId = setInterval(() => {
-			setCollisionItem(k.get("player")[0].collisionItem);
+			const hitItem = k.get("player")[0].collisionItem.toString();
+			setCollisionItem(hitItem);
+			if (
+				hitItem.length > 0 &&
+				hitItem !== collisionItem &&
+				hitItem.includes("DL")
+			) {
+				if (!itemsFound.includes(hitItem)) {
+					const temp = [...itemsFound];
+					temp.push(hitItem);
+					setItemsFound(temp);
+				}
+			}
 		}, 10);
 
 		return () => {
 			clearInterval(intervalId);
 		};
-	}, []);
+	}, [collisionItem, itemsFound]);
 
-	console.log(collisionItem);
+	console.log(itemsFound);
 
 	const playAudio = () => {
 		setMuted(!muted);
@@ -46,7 +74,9 @@ function App() {
 				<source src="./sounds/lofi.mp3" type="audio/mpeg" />
 				<track kind="captions" />
 			</audio>
-			<Textbox collisionItem={collisionItem} />
+			<Textbox
+				collisionItem={!collisionItem.includes("door") ? collisionItem : ""}
+			/>
 			<div className="mute">
 				<div
 					ref={muteButtonRef}
@@ -64,7 +94,9 @@ function App() {
 			</div>
 
 			<div className="gameDataBox deepLocalData">
-				<p className="ui-text">Hey</p>
+				<p className="ui-text">
+					{itemsFound.length}/{totalDLItems}
+				</p>
 				<img
 					className="deepLocalLogo"
 					src="./icons/Deeplocal_Logo.gif"
@@ -73,11 +105,23 @@ function App() {
 			</div>
 			<div className="noteAndLives">
 				<p className="note">Tap/Click around to move</p>
-				<img
-					className="heartLogo"
-					src="./icons/Heart_8bit_Full.png"
-					alt="heart icon"
-				/>
+				<div className="lifeContainer">
+					<img
+						className="heartLogo"
+						src="./icons/Heart_8bit_Full.png"
+						alt="heart icon"
+					/>
+					<img
+						className="heartLogo"
+						src="./icons/Heart_8bit_Full.png"
+						alt="heart icon"
+					/>
+					<img
+						className="heartLogo"
+						src="./icons/Heart_8bit_Empty.png"
+						alt="heart icon"
+					/>
+				</div>
 			</div>
 			<div className="coinData">
 				<img src="./icons/Coin1.gif" alt="heart icon" />

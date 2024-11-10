@@ -45,12 +45,12 @@ export default async function workoutScene(spawn) {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
+            player.collisionItem = boundary.name;
+
             if (boundary.name === "doorEnglish") {
               fadeToNewScene(player, "english", "spawnWorkout");
             } else if (boundary.name === "doorCommunity") {
               fadeToNewScene(player, "community", "spawnWorkout");
-            } else {
-              player.collisionItem = boundary.name;
             }
           });
 

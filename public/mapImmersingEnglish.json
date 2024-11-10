@@ -768,7 +768,7 @@
                 {
                  "height":25.5587005196232,
                  "id":62,
-                 "name":"immersingEnglishWebsite",
+                 "name":"immersingEnglishWebsiteDL",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -779,7 +779,7 @@
                 {
                  "height":10.1389886358836,
                  "id":63,
-                 "name":"immersingEnglishWebsite",
+                 "name":"immersingEnglishWebsiteDL",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -845,7 +845,7 @@
                 {
                  "height":17.1095433230535,
                  "id":71,
-                 "name":"immersingEnglishDocumentation",
+                 "name":"immersingEnglishDocumentationDL",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -942,7 +942,7 @@
          "y":0
         }],
  "nextlayerid":14,
- "nextobjectid":76,
+ "nextobjectid":77,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

@@ -1,5 +1,5 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR, BACKGROUNDCOLOR, playerData, } from "../../constants";
+import { SCALEFACTOR, BACKGROUNDCOLOR, playerData } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
@@ -45,12 +45,12 @@ export default async function portfolioScene(spawn) {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
+            player.collisionItem = boundary.name;
+
             if (boundary.name === "doorEnglish") {
               fadeToNewScene(player, "english", "spawnPortfolio");
             } else if (boundary.name === "doorCommunity") {
               fadeToNewScene(player, "community", "spawnPortfolio");
-            } else {
-              player.collisionItem = boundary.name;
             }
           });
 

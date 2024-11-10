@@ -85,3 +85,83 @@ export function fadeToNewScene(player, scene, spawnName) {
     k.go(scene, spawnName);
   }, 2000);
 }
+
+export async function getDLItemTotal() {
+  let total = 0;
+  await fetch("mapImmersingEnglish.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Access data from the parsed JSON object
+      // console.log(data.layers);
+      for (const layer in data.layers) {
+        if (data.layers[layer].name === "deeplocalSpawns") {
+          total += data.layers[layer].objects.length;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching or parsing JSON:", error);
+    });
+
+    await fetch("mapCommunity.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Access data from the parsed JSON object
+      // console.log(data.layers);
+      for (const layer in data.layers) {
+        if (data.layers[layer].name === "deeplocalSpawns") {
+          total += data.layers[layer].objects.length;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching or parsing JSON:", error);
+    });
+
+    await fetch("mapHome.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Access data from the parsed JSON object
+      // console.log(data.layers);
+      for (const layer in data.layers) {
+        if (data.layers[layer].name === "deeplocalSpawns") {
+          total += data.layers[layer].objects.length;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching or parsing JSON:", error);
+    });
+
+    await fetch("mapPortfolio.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Access data from the parsed JSON object
+      // console.log(data.layers);
+      for (const layer in data.layers) {
+        if (data.layers[layer].name === "deeplocalSpawns") {
+          total += data.layers[layer].objects.length;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching or parsing JSON:", error);
+    });
+
+    await fetch("mapWorkoutTracker.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Access data from the parsed JSON object
+      // console.log(data.layers);
+      for (const layer in data.layers) {
+        if (data.layers[layer].name === "deeplocalSpawns") {
+          total += data.layers[layer].objects.length;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching or parsing JSON:", error);
+    });
+
+  return total;
+}

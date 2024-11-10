@@ -46,10 +46,10 @@ export default async function projectScene(spawn) {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
+            player.collisionItem = boundary.name;
+
             if (boundary.name === "doorHome") {
               k.go("home", "spawnDoorProjects");
-            } else {
-              player.collisionItem = boundary.name;
             }
           });
 

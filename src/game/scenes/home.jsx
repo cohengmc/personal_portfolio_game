@@ -1,5 +1,5 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR, playerData, } from "../../constants";
+import { SCALEFACTOR, playerData } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
@@ -61,10 +61,10 @@ export default async function homeScene(spawn) {
 
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
-            if (boundary.name === "doorProjects") {
+            player.collisionItem = boundary.name;
+
+            if (boundary.name === "doorProjectsDL") {
               fadeToNewScene(player, "english", "spawnDoor");
-            } else {
-              player.collisionItem = boundary.name;
             }
           });
 

@@ -13,6 +13,6 @@ export const dialogueData = {
   key: "You found a key!",
   coin: "Money!!",
   computer: `Wow you found <a href="https://www.youtube.com" target="_blank">YouTube</a>!`,
-  immersingEnglishWebsite: `Interested in learning English with comprehensible input? Find fun native content you can sort and filter at your level with <a href="https://immersing-english-2.framer.ai/" target="_blank">Immersing English</a>!`,
-  immersingEnglishDocumentation: `Learn more about the planning, content modeling, component libary and more that went into designing and prototyping Immersing Enligh through its <a href="https://woolen-guan-425.notion.site/Immersing-English-13701b16cedc80e2aeeade653e388c80" target="_blank">documentation</a>!`,
+  immersingEnglishWebsiteDL: `Interested in learning English with comprehensible input? Find fun native content you can sort and filter at your level with <a href="https://immersing-english-2.framer.ai/" target="_blank">Immersing English</a>!`,
+  immersingEnglishDocumentationDL: `Learn more about the planning, content modeling, component libary and more that went into designing and prototyping Immersing Enligh through its <a href="https://woolen-guan-425.notion.site/Immersing-English-13701b16cedc80e2aeeade653e388c80" target="_blank">documentation</a>!`,
 };

@@ -18,11 +18,11 @@ export default function loadSriteCharacters() {
     sliceX: 4,
     sliceY: 1,
     anims: {
-      "idle-down": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-down": { from: 0, to: 3, loop: true, speed: 3 },
       "walk-down": { from: 0, to: 3, loop: true, speed: 8 },
-      "idle-side": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-side": { from: 0, to: 3, loop: true, speed: 3 },
       "walk-side": { from: 0, to: 3, loop: true, speed: 8 },
-      "idle-up": { from: 0, to: 3, loop: true, speed: 8 },
+      "idle-up": { from: 0, to: 3, loop: true, speed: 3 },
       "walk-up": { from: 0, to: 3, loop: true, speed: 8 },
     },
   });
@@ -31,7 +31,7 @@ export default function loadSriteCharacters() {
     sliceX: 10,
     sliceY: 1,
     anims: {
-      "spin-logo": { from: 0, to: 9, loop: true, speed: 12 },
+      "spin-logo": { from: 0, to: 9, loop: true, speed: 7.2 },
     },
   });
 
