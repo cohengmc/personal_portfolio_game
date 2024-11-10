@@ -1,14 +1,17 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR, BACKGROUNDCOLOR } from "../../constants";
+import { SCALEFACTOR, BACKGROUNDCOLOR, playerData } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
   deepLocalSpawnHelper,
+  fadeToNewScene,
 } from "../utils";
 import { setControlsHelper } from "../movement";
+import gsap from "gsap";
 
 export default async function communityScene(spawn) {
+  gsap.to("#app", { opacity: 1 });
   k.loadSprite("map", "./mapCommunity.png");
   k.setBackground(k.Color.fromHex(BACKGROUNDCOLOR));
 
@@ -27,10 +30,7 @@ export default async function communityScene(spawn) {
     k.pos(),
     k.scale(SCALEFACTOR),
     {
-      speed: 60 * SCALEFACTOR,
-      direction: "down",
-      collisionItem: "",
-
+      ...playerData,
       setControls() {
         setControlsHelper(k, this);
       },
@@ -46,9 +46,9 @@ export default async function communityScene(spawn) {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorWorkout") {
-              k.go("workout", "spawnCommunity");
+              fadeToNewScene(player, "workout", "spawnCommunity");
             } else if (boundary.name === "doorPortfolio") {
-              k.go("portfolio", "spawnCommunity");
+              fadeToNewScene(player, "portfolio", "spawnCommunity");
             } else {
               player.collisionItem = boundary.name;
             }

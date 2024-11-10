@@ -475,8 +475,8 @@
                  "type":"",
                  "visible":true,
                  "width":112,
-                 "x":192,
-                 "y":48
+                 "x":190.732626420515,
+                 "y":48.2112289299142
                 }, 
                 {
                  "height":32,
@@ -613,7 +613,7 @@
                 {
                  "height":13.588850174216,
                  "id":42,
-                 "name":"immersingEnglishDocumentation",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -841,6 +841,17 @@
                  "width":15.8421697435681,
                  "x":207.638038105699,
                  "y":136.876346584428
+                }, 
+                {
+                 "height":17.1095433230535,
+                 "id":71,
+                 "name":"immersingEnglishDocumentation",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":26.1923873093659,
+                 "x":277.554813907313,
+                 "y":117.865742892146
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -921,8 +932,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":239.533606522749,
-                 "y":52.1735456888175
+                 "x":294.453128300452,
+                 "y":117.443285032318
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -931,7 +942,7 @@
          "y":0
         }],
  "nextlayerid":14,
- "nextobjectid":71,
+ "nextobjectid":76,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

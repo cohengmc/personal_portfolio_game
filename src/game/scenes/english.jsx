@@ -1,14 +1,17 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR, BACKGROUNDCOLOR } from "../../constants";
+import { SCALEFACTOR, BACKGROUNDCOLOR, playerData } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
   deepLocalSpawnHelper,
+  fadeToNewScene,
 } from "../utils";
 import { setControlsHelper } from "../movement";
+import gsap from "gsap";
 
 export default async function englishScene(spawn) {
+  gsap.to("#app", { opacity: 1 });
   k.loadSprite("map", "./mapImmersingEnglish.png");
   k.setBackground(k.Color.fromHex(BACKGROUNDCOLOR));
 
@@ -16,6 +19,8 @@ export default async function englishScene(spawn) {
   const layers = mapData.layers;
 
   const map = k.add([k.sprite("map"), k.pos(0), k.scale(SCALEFACTOR)]);
+
+  const portfolioItems = 2;
 
   const player = k.make([
     k.sprite("dl_sprite", { anim: "idle-down" }),
@@ -27,10 +32,7 @@ export default async function englishScene(spawn) {
     k.pos(),
     k.scale(SCALEFACTOR),
     {
-      speed: 60 * SCALEFACTOR,
-      direction: "down",
-      collisionItem: "",
-
+      ...playerData,
       setControls() {
         setControlsHelper(k, this);
       },
@@ -46,11 +48,11 @@ export default async function englishScene(spawn) {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorHome") {
-              k.go("home", "spawnDoorProjects");
+              fadeToNewScene(player, "home", "spawnDoorProjects");
             } else if (boundary.name === "doorPortfolio") {
-              k.go("portfolio", "spawnEnglish");
+              fadeToNewScene(player, "portfolio", "spawnEnglish");
             } else if (boundary.name === "doorWorkout") {
-              k.go("workout", "spawnEnglish");
+              fadeToNewScene(player, "workout", "spawnEnglish");
             } else {
               player.collisionItem = boundary.name;
             }

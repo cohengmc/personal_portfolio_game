@@ -6,8 +6,10 @@ import {
   makeBoundariesSolidHelper,
 } from "../utils";
 import { setControlsHelper } from "../movement";
+import gsap from "gsap";
 
 export default async function projectScene(spawn) {
+  gsap.to("#app", { opacity: 1 });
   k.loadSprite("map", "./mapProjects.png");
   k.setBackground(k.Color.fromHex("#C0AFE2"));
 

@@ -1,14 +1,17 @@
 import { k } from "../../kaboomCtx";
-import { SCALEFACTOR } from "../../constants";
+import { SCALEFACTOR, playerData, } from "../../constants";
 import {
   sceneHelper,
   goToSpawnHelper,
   makeBoundariesSolidHelper,
   deepLocalSpawnHelper,
+  fadeToNewScene,
 } from "../utils";
-import { mouseMovementHelper, setControlsHelper } from "../movement";
+import { setControlsHelper } from "../movement";
+import gsap from "gsap";
 
 export default async function homeScene(spawn) {
+  gsap.to("#app", { opacity: 1 });
   k.loadSprite("map", "./mapHome.png");
   k.setBackground(k.Color.fromHex("#87CEEB"));
 
@@ -42,10 +45,7 @@ export default async function homeScene(spawn) {
 
     //hold properties within an game object by passing in an object with any properties you want. so player.speed = 250 but we can make anything like adding hand: "left" then player.hand would be left
     {
-      speed: 60 * SCALEFACTOR,
-      direction: "down",
-      collisionItem: "",
-
+      ...playerData,
       setControls() {
         setControlsHelper(k, this);
       },
@@ -62,7 +62,7 @@ export default async function homeScene(spawn) {
         if (boundary.name) {
           player.onCollide(boundary.name, () => {
             if (boundary.name === "doorProjects") {
-              k.go("english", "spawnDoor");
+              fadeToNewScene(player, "english", "spawnDoor");
             } else {
               player.collisionItem = boundary.name;
             }

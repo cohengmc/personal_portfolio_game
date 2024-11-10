@@ -1,15 +1,17 @@
-import { SCALEFACTOR } from "../constants";
+import { SCALEFACTOR, CAMSCALE } from "../constants";
 import { mouseMovementHelper } from "./movement";
+import gsap from "gsap";
+import { k } from "../kaboomCtx";
 
 // Scale sizing based on device
 export function setCamScale(k) {
   const resizeFactor = k.width() / k.height();
   if (resizeFactor < 1) {
-    k.camScale(k.vec2(1));
+    k.camScale(k.vec2(CAMSCALE));
     return;
   }
 
-  k.camScale(k.vec2(1.5));
+  k.camScale(k.vec2(CAMSCALE * 1.5));
 }
 
 export function goToSpawnHelper(k, layer, player, map, spawn) {
@@ -73,4 +75,13 @@ export function deepLocalSpawnHelper(k, layer, map) {
       ]);
     }
   }
+}
+
+export function fadeToNewScene(player, scene, spawnName) {
+  player.isSpawning = true;
+  gsap.to("#app", { opacity: 0 });
+  k.play("levelUp", { volume: 0.25 });
+  setTimeout(() => {
+    k.go(scene, spawnName);
+  }, 2000);
 }

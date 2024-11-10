@@ -21,5 +21,8 @@ export const k = kaplay({
     enter: {
       keyboard: ["space", "enter"],
     },
+    mute: {
+      keyboard: ["m"],
+    },
   },
 });
