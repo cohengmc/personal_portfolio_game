@@ -42,32 +42,45 @@ function App() {
 
 	return (
 		<div id="ui">
-			<p className="note">Tap/Click around to move</p>
 			<audio ref={audioRef}>
 				<source src="./sounds/lofi.mp3" type="audio/mpeg" />
 				<track kind="captions" />
 			</audio>
 			<Textbox collisionItem={collisionItem} />
-			<div
-				ref={muteButtonRef}
-				className="audio-btn-container"
-				onClick={playAudio}
-				onKeyDown={playAudio}
-				onBlur={handleBlur}
-			>
+			<div className="mute">
+				<div
+					ref={muteButtonRef}
+					className="audio-btn-container"
+					onClick={playAudio}
+					onKeyDown={playAudio}
+					onBlur={handleBlur}
+				>
+					<img
+						className="icon"
+						src={!muted ? "./icons/muted.png" : "./icons/audio.png"}
+						alt="audioIcon"
+					/>
+				</div>
+			</div>
+
+			<div className="gameDataBox deepLocalData">
+				<p className="ui-text">Hey</p>
 				<img
-					className="icon"
-					src={!muted ? "./icons/muted.png" : "./icons/audio.png"}
-					alt="audioIcon"
+					className="deepLocalLogo"
+					src="./icons/Deeplocal_Logo.gif"
+					alt="dl icon"
 				/>
 			</div>
-			<div style={{ display: "block" }}>
-				<div className="gameDataBox">
-					<div style={{display: "flex", alignItems: "center"}}>
-						<p className="ui-text">Hey</p>
-						<img src="./icons/Deeplocal_Logo.gif" alt="dl icon" style={{width: "4rem"}}/>
-					</div>
-				</div>
+			<div className="noteAndLives">
+				<p className="note">Tap/Click around to move</p>
+				<img
+					className="heartLogo"
+					src="./icons/Heart_8bit_Full.png"
+					alt="heart icon"
+				/>
+			</div>
+			<div className="coinData">
+				<img src="./icons/Coin1.gif" alt="heart icon" />
 			</div>
 		</div>
 	);
