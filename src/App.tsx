@@ -9,6 +9,7 @@ function App() {
 	const [muted, setMuted] = useState(false);
 	const [totalDLItems, setTotalDLItems] = useState(0);
 	const [itemsFound, setItemsFound] = useState([]);
+	const [coins, setCoins] = useState(0);
 	const audioRef = useRef(null);
 	const muteButtonRef = useRef(null);
 
@@ -38,6 +39,9 @@ function App() {
 					const temp = [...itemsFound];
 					temp.push(hitItem);
 					setItemsFound(temp);
+					setCoins(coins + 50);
+					const audio = new Audio("./sounds/coin.mp3");
+					if (muted) audio.play();
 				}
 			}
 		}, 10);
@@ -45,7 +49,7 @@ function App() {
 		return () => {
 			clearInterval(intervalId);
 		};
-	}, [collisionItem, itemsFound]);
+	}, [collisionItem, itemsFound, coins, muted]);
 
 	console.log(itemsFound);
 
@@ -94,9 +98,7 @@ function App() {
 			</div>
 
 			<div className="gameDataBox deepLocalData">
-				<p className="ui-text">
-					{itemsFound.length}/{totalDLItems}
-				</p>
+				<p className="ui-text">{itemsFound.length}</p>
 				<img
 					className="deepLocalLogo"
 					src="./icons/Deeplocal_Logo.gif"
@@ -124,6 +126,7 @@ function App() {
 				</div>
 			</div>
 			<div className="coinData">
+				<p>{coins}</p>
 				<img src="./icons/Coin1.gif" alt="heart icon" />
 			</div>
 		</div>
