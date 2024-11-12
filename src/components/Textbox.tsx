@@ -238,7 +238,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						</div>
 						<p>
 							<a
-								href="https://workout-tracker-csse280.web.app/"
+								href="./documentation/WonderWallkerDocumentation.pdf"
 								target="_blank"
 								rel="noreferrer"
 							>
