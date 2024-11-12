@@ -280,7 +280,7 @@
                 {
                  "height":20,
                  "id":18,
-                 "name":"trackHurdlesPhotoDL",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -291,7 +291,7 @@
                 {
                  "height":18.3333333333333,
                  "id":19,
-                 "name":"trackHurdlesPhotoDL",
+                 "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -558,18 +558,6 @@
                  "width":0,
                  "x":167.666666666667,
                  "y":60.3333333333333
-                }, 
-                {
-                 "height":0,
-                 "id":49,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":223.666666666667,
-                 "y":74.6666666666667
                 }, 
                 {
                  "height":0,

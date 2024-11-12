@@ -70,7 +70,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Geoff has always had a passion for athletics. Here he is competing
+							I've always had a passion for athletics. Here he is competing
 							in triple jump, a track and field event, his senior year of high
 							school.
 						</p>
@@ -138,7 +138,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Geoff competing in 110m hurdles, a track and field event, his
+							Me competing in 110m hurdles, a track and field event, his
 							senior year of college
 						</p>
 					</div>
@@ -233,7 +233,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								className="ui-image"
 								src="./images/workout/wonderWalker/musicMap.jpg"
 								alt="wonder walker music map"
-								style={{ height: "25rem" }}
+								style={{ height: "25rem", width: "auto" }}
 							/>
 						</div>
 						<p>
@@ -413,7 +413,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I've begun wireframing and constructing the component library for
+							I've begun wireframing and constructing the react component library with Framer for
 							a mobile app that will present the data once it has been collected
 							and stored.
 						</p>
@@ -432,7 +432,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Geoff spent a couple weeks (Summer 2019) helping out at the CMU
+							I spent a couple weeks (Summer 2019) helping out at the CMU
 							robotics lab on a project called Cuberover (now Astrobotic)
 						</p>
 					</div>
@@ -440,7 +440,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 					""
 				)}
 				{collisionItem === "armyDL" ? (
-					<div className="multiple-image-container">
+					<div className="multiple-image-container" style={{width:"100%"}}>
 						<Hashtags
 							hashtags={[
 								"communication",
@@ -448,7 +448,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								"fast-paced-team-environment",
 							]}
 						/>
-						<div className="image-gallery-2">
+						<div className="image-gallery-3">
 							<img
 								className="ui-image"
 								src="./images/community/armyFitness.png"
