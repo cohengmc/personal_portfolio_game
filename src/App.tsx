@@ -10,6 +10,7 @@ function App() {
 	const [muted, setMuted] = useState(false);
 	const [totalDLItems, setTotalDLItems] = useState(0);
 	const [itemsFound, setItemsFound] = useState([]);
+	const [dlCount, setDLCount] = useState(0);
 	const [coins, setCoins] = useState(0);
 	const audioRef = useRef(null);
 	const muteButtonRef = useRef(null);
@@ -34,16 +35,21 @@ function App() {
 			if (
 				hitItem.length > 0 &&
 				hitItem !== collisionItem &&
-				hitItem.includes("DL")
+				(hitItem.includes("DL") || hitItem.includes("COIN"))
 			) {
 				if (!itemsFound.includes(hitItem)) {
-					const temp = [...itemsFound];
-					temp.push(hitItem);
-					setItemsFound(temp);
-					setCoins(coins + 50);
 					const audio = new Audio("./sounds/coin.mp3");
 					audio.volume = INTERACTIVEVOLUME;
 					if (muted) audio.play();
+					const temp = [...itemsFound];
+					temp.push(hitItem);
+					setItemsFound(temp);
+					if (hitItem.includes("DL")) {
+						setCoins(coins + 100);
+						setDLCount(dlCount + 1);
+					} else {
+						setCoins(coins + 50);
+					}
 				}
 			}
 		}, 10);
@@ -51,7 +57,7 @@ function App() {
 		return () => {
 			clearInterval(intervalId);
 		};
-	}, [collisionItem, itemsFound, coins, muted]);
+	}, [collisionItem, itemsFound, coins, muted, dlCount]);
 
 	console.log(itemsFound);
 
@@ -100,7 +106,9 @@ function App() {
 			</div>
 
 			<div className="gameDataBox deepLocalData">
-				<p className="ui-text">{itemsFound.length}</p>
+				<p className="ui-text">
+					{dlCount}/{totalDLItems}
+				</p>
 				<img
 					className="deepLocalLogo"
 					src="./icons/Deeplocal_Logo.gif"

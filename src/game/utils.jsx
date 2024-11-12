@@ -75,6 +75,26 @@ export function deepLocalSpawnHelper(k, layer, map) {
       ]);
     }
   }
+  if (layer.name === "coinSpawns") {
+    for (const entity of layer.objects) {
+      k.add([
+        k.sprite("coin", { anim: "spin-logo" }),
+        k.area({
+          shape: new k.Rect(k.vec2(0, 3), 0, 0),
+        }),
+        k.body(),
+        k.anchor("center"),
+        k.pos(
+          k.vec2(
+            (map.pos.x + entity.x) * SCALEFACTOR + 1 * SCALEFACTOR,
+            (map.pos.y + entity.y) * SCALEFACTOR - 12 * SCALEFACTOR
+          )
+        ),
+        k.scale(SCALEFACTOR * 0.3),
+        "logo",
+      ]);
+    }
+  }
 }
 
 export function fadeToNewScene(player, scene, spawnName) {
@@ -103,7 +123,7 @@ export async function getDLItemTotal() {
       console.error("Error fetching or parsing JSON:", error);
     });
 
-    await fetch("mapCommunity.json")
+  await fetch("mapCommunity.json")
     .then((response) => response.json())
     .then((data) => {
       // Access data from the parsed JSON object
@@ -118,7 +138,7 @@ export async function getDLItemTotal() {
       console.error("Error fetching or parsing JSON:", error);
     });
 
-    await fetch("mapHome.json")
+  await fetch("mapHome.json")
     .then((response) => response.json())
     .then((data) => {
       // Access data from the parsed JSON object
@@ -133,7 +153,7 @@ export async function getDLItemTotal() {
       console.error("Error fetching or parsing JSON:", error);
     });
 
-    await fetch("mapPortfolio.json")
+  await fetch("mapPortfolio.json")
     .then((response) => response.json())
     .then((data) => {
       // Access data from the parsed JSON object
@@ -148,7 +168,7 @@ export async function getDLItemTotal() {
       console.error("Error fetching or parsing JSON:", error);
     });
 
-    await fetch("mapWorkoutTracker.json")
+  await fetch("mapWorkoutTracker.json")
     .then((response) => response.json())
     .then((data) => {
       // Access data from the parsed JSON object

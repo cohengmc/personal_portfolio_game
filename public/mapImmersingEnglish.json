@@ -845,7 +845,7 @@
                 {
                  "height":17.1095433230535,
                  "id":71,
-                 "name":"immersingEnglishDocumentationDL",
+                 "name":"immersingEnglishDocumentationCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -922,18 +922,29 @@
                  "width":0,
                  "x":192.007097292045,
                  "y":125.892442228888
-                }, 
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":14,
+         "name":"coinSpawns",
+         "objects":[
                 {
                  "height":0,
-                 "id":70,
-                 "name":"documentation",
+                 "id":77,
+                 "name":"",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":294.453128300452,
-                 "y":117.443285032318
+                 "x":294.030670440624,
+                 "y":122.724008280174
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -941,8 +952,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":14,
- "nextobjectid":77,
+ "nextlayerid":15,
+ "nextobjectid":78,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

@@ -258,7 +258,7 @@
                 {
                  "height":27,
                  "id":15,
-                 "name":"trackJumpPhotoDL",
+                 "name":"trackJumpPhotoCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -313,7 +313,7 @@
                 {
                  "height":21.3333333333333,
                  "id":21,
-                 "name":"csse280WorkoutTrackerDL",
+                 "name":"csse280WorkoutTrackerCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -335,7 +335,7 @@
                 {
                  "height":10.3333333333333,
                  "id":27,
-                 "name":"framerTrackerDL",
+                 "name":"framerTrackerCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -413,7 +413,7 @@
                 {
                  "height":20,
                  "id":40,
-                 "name":"arduinoDL",
+                 "name":"arduinoCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -446,7 +446,7 @@
                 {
                  "height":9,
                  "id":43,
-                 "name":"combinationDL",
+                 "name":"combinationCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -468,7 +468,7 @@
                 {
                  "height":22.6666666666667,
                  "id":45,
-                 "name":"astroboticDL",
+                 "name":"astroboticCOIN",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -537,42 +537,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":47,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":119.333333333333,
-                 "y":73.6666666666667
-                }, 
-                {
-                 "height":0,
-                 "id":48,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":167.666666666667,
-                 "y":60.3333333333333
-                }, 
-                {
-                 "height":0,
-                 "id":50,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":272,
-                 "y":71.3333333333333
-                }, 
-                {
-                 "height":0,
                  "id":51,
                  "name":"",
                  "point":true,
@@ -585,7 +549,7 @@
                 }, 
                 {
                  "height":0,
-                 "id":52,
+                 "id":64,
                  "name":"",
                  "point":true,
                  "rotation":0,
@@ -593,11 +557,70 @@
                  "visible":true,
                  "width":0,
                  "x":167.333333333333,
-                 "y":249.333333333333
+                 "y":63.3333333333333
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":9,
+         "name":"coinSpawns",
+         "objects":[
+                {
+                 "height":0,
+                 "id":58,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":120,
+                 "y":86
                 }, 
                 {
                  "height":0,
-                 "id":54,
+                 "id":60,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":272,
+                 "y":79
+                }, 
+                {
+                 "height":0,
+                 "id":61,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":120.333333333333,
+                 "y":176.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":62,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":167.666666666667,
+                 "y":255
+                }, 
+                {
+                 "height":0,
+                 "id":63,
                  "name":"",
                  "point":true,
                  "rotation":0,
@@ -605,31 +628,19 @@
                  "visible":true,
                  "width":0,
                  "x":296,
-                 "y":239.666666666667
+                 "y":247.333333333333
                 }, 
                 {
                  "height":0,
-                 "id":55,
+                 "id":65,
                  "name":"",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":206.333333333333,
-                 "y":168
-                }, 
-                {
-                 "height":0,
-                 "id":56,
-                 "name":"",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":120.666666666667,
-                 "y":176.333333333333
+                 "x":207.666666666667,
+                 "y":173
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -637,8 +648,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":57,
+ "nextlayerid":10,
+ "nextobjectid":66,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",

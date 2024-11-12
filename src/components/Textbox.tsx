@@ -9,7 +9,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 			}
 		>
 			<div className="textbox">
-				{collisionItem === "immersingEnglishDocumentationDL" ? (
+				{collisionItem === "immersingEnglishDocumentationCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags hashtags={["design", "user-stories", "documentation"]} />
 						<p>
@@ -59,7 +59,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "trackJumpPhotoDL" ? (
+				{collisionItem === "trackJumpPhotoCOIN" ? (
 					<div className="image-left-container">
 						<div className="image-gallery-1">
 							<img
@@ -70,7 +70,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I've always had a passion for athletics. Here he is competing
+							I've always had a passion for athletics. Here I am competing
 							in triple jump, a track and field event, his senior year of high
 							school.
 						</p>
@@ -145,7 +145,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "csse280WorkoutTrackerDL" ? (
+				{collisionItem === "csse280WorkoutTrackerCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags
 							hashtags={[
@@ -256,7 +256,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "combinationDL" ? (
+				{collisionItem === "combinationCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags
 							hashtags={[
@@ -298,7 +298,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "arduinoDL" ? (
+				{collisionItem === "arduinoCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags
 							hashtags={[
@@ -395,7 +395,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "framerTrackerDL" ? (
+				{collisionItem === "framerTrackerCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags hashtags={["Web-dev", "ui/ux", "react", "front-end"]} />
 						<div className="image-gallery-2">
@@ -421,7 +421,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "astroboticDL" ? (
+				{collisionItem === "astroboticCOIN" ? (
 					<div className="image-left-container">
 						<div className="image-gallery-1">
 							<img
@@ -432,7 +432,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I spent a couple weeks (Summer 2019) helping out at the CMU
+							Fun fact: I spent a couple weeks (Summer 2019) helping out at the CMU
 							robotics lab on a project called Cuberover (now Astrobotic)
 						</p>
 					</div>
@@ -502,17 +502,17 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						</div>
 						<p>
 							Learning Spanish has changed how I see and communicate with the
-							world around me. I have been lucky to learn from a foreign
-							exchange in Mexico, studying while aborad, and volunteering to
+							world around me. I have been lucky to learn from living in Mexico during a foreign
+							exchange (right), studying while aborad, and volunteering to
 							teach with an English as second language program.
 						</p>
 					</div>
 				) : (
 					""
 				)}
-				{collisionItem === "trackDL" ? (
+				{collisionItem === "trackCOIN" ? (
 					<div className="multiple-image-container">
-						<Hashtags hashtags={["teamwork", "community"]} />
+						<Hashtags hashtags={["teamwork", "community", "pittsburgh"]} />
 						<div className="image-gallery-2">
 							<img
 								className="ui-image"
@@ -531,7 +531,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "pittDL" ? (
+				{collisionItem === "pittCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<Hashtags hashtags={["community", "pittsburgh", "family"]} />
 						<div
@@ -570,7 +570,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 					""
 				)}
 
-				{collisionItem === "spritesDL" ? (
+				{collisionItem === "spritesCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<Hashtags hashtags={["art", "creativity", "fun"]} />
 						<div
@@ -584,7 +584,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								style={{ maxWidth: "50rem" }}
 							/>
 						</div>
-						<p>Making the sprites was a ton of fun :)</p>
+						<p>Making the sprites was a blast :)</p>
 					</div>
 				) : (
 					""
@@ -605,14 +605,14 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Learning this new was a ton of fun! I had no idea it existed. This
+							Learning this new library was a ton of fun! I had no idea it existed. This
 							is the first 'video game' I've made! :)
 						</p>
 					</div>
 				) : (
 					""
 				)}
-				{collisionItem === "sprintDL" ? (
+				{collisionItem === "sprintCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<Hashtags hashtags={["engineering", "sprint"]} />
 						<div
@@ -635,7 +635,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "tiledDL" ? (
+				{collisionItem === "tiledCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<Hashtags hashtags={["art", "creativity"]} />
 						<div
@@ -655,7 +655,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				) : (
 					""
 				)}
-				{collisionItem === "funDL" ? (
+				{collisionItem === "funCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<p>
 							This dinosaur has no real relevance. Just thought it looked cool!

@@ -35,6 +35,14 @@ export default function loadSriteCharacters() {
     },
   });
 
+  k.loadSprite("coin", "./Coin1.png", {
+    sliceX: 9,
+    sliceY: 1,
+    anims: {
+      "spin-logo": { from: 0, to: 8, loop: true, speed: 7.2 },
+    },
+  });
+
   k.loadSprite("Geoff_Sprite", "./Geoff_Sprite.png", {
     sliceX: 16,
     sliceY: 1,
