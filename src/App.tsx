@@ -13,6 +13,8 @@ function App() {
 	const [dlCount, setDLCount] = useState(0);
 	const [coins, setCoins] = useState(0);
 	const [isPortfolioMessage, setIsPortfolioMessage] = useState(false);
+	const [isInstructions, setIsInstructions] = useState(true);
+	const [isWin, setIsWin] = useState(false);
 	const audioRef = useRef(null);
 	const muteButtonRef = useRef(null);
 
@@ -30,13 +32,17 @@ function App() {
 	}, []);
 
 	useEffect(() => {
+		coins === 1500 ? setIsWin(true) : "";
+	}, [coins]);
+
+	useEffect(() => {
 		const intervalId = setInterval(() => {
 			const hitItem = k.get("player")[0].collisionItem.toString();
-			if(hitItem === "noPortfolio"){
+			if (hitItem === "noPortfolio") {
 				setIsPortfolioMessage(true);
 			}
-			if(hitItem !== "noPortfolio" && isPortfolioMessage){
-				setIsPortfolioMessage(false)
+			if (hitItem !== "noPortfolio" && isPortfolioMessage) {
+				setIsPortfolioMessage(false);
 			}
 			setCollisionItem(hitItem);
 			if (
@@ -64,7 +70,7 @@ function App() {
 		return () => {
 			clearInterval(intervalId);
 		};
-	}, [collisionItem, itemsFound, coins, muted, dlCount]);
+	}, [collisionItem, itemsFound, coins, muted, dlCount, isPortfolioMessage]);
 
 	// console.log(itemsFound);
 
@@ -83,6 +89,15 @@ function App() {
 		}
 	};
 
+	const handleInstructionsClick = () => {
+		setIsInstructions(false);
+	};
+
+	const handleCloseWin = () => {
+		setCoins(coins + 1000);
+		setIsWin(false);
+	};
+
 	const handleBlur = () => {
 		if (muteButtonRef.current !== null) muteButtonRef.current.blur();
 	};
@@ -96,9 +111,42 @@ function App() {
 			<Textbox
 				collisionItem={!collisionItem.includes("door") ? collisionItem : ""}
 			/>
-			<Textbox
-				collisionItem={isPortfolioMessage ? "noPortfolio" : ""}
-			/>
+			<Textbox collisionItem={isPortfolioMessage ? "noPortfolio" : ""} />
+			<Textbox collisionItem={isInstructions ? "instructions" : ""} />
+			<Textbox collisionItem={isWin ? "win" : ""} />
+			<div
+				className="play-btn-container"
+				style={isWin ? { display: "flex" } : { display: "none" }}
+			>
+				<div
+					className="audio-btn-container"
+					style={{ border: "2px solid black" }}
+				>
+					<div
+						className=".ui-btn"
+						style={{ fontWeight: "bolder", cursor: "pointer" }}
+						onClick={handleCloseWin}
+						onKeyDown={handleCloseWin}
+					>
+						Close Win Screen
+					</div>
+				</div>
+			</div>
+			<div
+				className="play-btn-container"
+				style={isInstructions ? { display: "flex" } : { display: "none" }}
+			>
+				<div className="audio-btn-container">
+					<div
+						className=".ui-btn"
+						style={{ fontWeight: "bolder", cursor: "pointer" }}
+						onClick={handleInstructionsClick}
+						onKeyDown={handleInstructionsClick}
+					>
+						Play!
+					</div>
+				</div>
+			</div>
 			<div className="mute">
 				<div
 					ref={muteButtonRef}

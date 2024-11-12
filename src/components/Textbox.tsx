@@ -8,7 +8,147 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				collisionItem.length > 0 ? { display: "block" } : { display: "none" }
 			}
 		>
-			<div className="textbox">
+			{collisionItem === "instructions" ? (
+				<div className="instruction-container">
+					<h1 className="no-margin">Welcome to Geoff's Portfolio!</h1>
+					<div style={{ display: "flex", gap: "4rem" }}>
+						<div>
+							<h2 className="no-margin" style={{ justifySelf: "center" }}>
+								Objectives:
+							</h2>
+							<ol className="no-margin">
+								<li>Collect all of the Deeplocal logos!</li>
+								<li>Get as many coins as you can!</li>
+							</ol>
+							<ul className="no-margin">
+								<li className="no-bullets">(Some coins may be hidden 👀)</li>
+							</ul>
+						</div>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center",
+								alignItems: "center",
+								gap: "2rem",
+							}}
+						>
+							<img
+								className="ui-image"
+								src="./icons/Deeplocal_Logo.gif"
+								alt="english documenation layout"
+								style={{ height: "5rem", width: "auto" }}
+							/>
+
+							<img
+								className="ui-image"
+								src="./icons/Coin1.gif"
+								alt="english planning"
+								style={{ height: "2.5rem", width: "2.5rem" }}
+							/>
+						</div>
+					</div>
+					<div style={{ display: "flex", gap: "4rem" }}>
+						<div>
+							<h2 className="no-margin" style={{ justifySelf: "center" }}>
+								Rules:
+							</h2>
+							<ol className="no-margin">
+								<li>Have fun!</li>
+								<li>Remember rule #1</li>
+							</ol>
+						</div>
+						<div>
+							<h2 className="no-margin" style={{ justifySelf: "center" }}>
+								Suggestions:
+							</h2>
+							<ul className="no-margin">
+								<li>Folllow along with Geoff</li>
+								<li>Remember rule #1</li>
+								<li>There are no rules</li>
+							</ul>
+						</div>
+						<div>
+							<h2 className="no-margin" style={{ justifySelf: "center" }}>
+								Controls:
+							</h2>
+							<ul className="no-margin">
+								<li>Move around with arrow keys or WASD</li>
+								<li>Sound controls are in the bottom left</li>
+								<li>
+									Click on{" "}
+									<span
+										style={{
+											color: "blue",
+											textDecoration: "underline",
+											cursor: "pointer",
+											pointerEvents: "auto",
+										}}
+									>
+										Links
+									</span>{" "}
+									to find out more about a project!
+								</li>
+							</ul>
+						</div>
+					</div>
+					<h3 className="no-margin" style={{ justifySelf: "center" }}>
+						There is a prize reward if you collect{" "}
+						<span style={{ color: "gold", textShadow: "1px 1px 4px black" }}>
+							1500 coins
+						</span>
+						!
+					</h3>
+				</div>
+			) : (
+				""
+			)}
+			{collisionItem === "win" ? (
+				<div className="instruction-container">
+					<h1 className="no-margin">
+						Congrats! You completed Geoff's Portfolio challenge!
+					</h1>
+					<h2>You win some 8-bit Deeplocal GIFs!</h2>
+					<div style={{ display: "flex", gap: "10rem"}}>
+						<img
+							className="ui-image"
+							src="./icons/Deeplocal_Logo.gif"
+							alt="DL logo"
+							style={{ height: "8rem", width: "auto" }}
+						/>
+						<img
+							className="ui-image"
+							src="./icons/Deeplocal_building.png"
+							alt="DL building"
+							style={{ height: "8rem", width: "auto" }}
+						/>
+						<img
+							className="ui-image"
+							src="./icons/Deeplocal_Friend_v1.gif"
+							alt="coin"
+							style={{ height: "8rem", width: "auto" }}
+						/>
+					</div>
+					<h3 className="no-margin" style={{ justifySelf: "center" }}>
+						There is a prize reward if you collect{" "}
+						<span style={{ color: "gold", textShadow: "1px 1px 4px black" }}>
+							1500 coins
+						</span>
+						!
+					</h3>
+				</div>
+			) : (
+				""
+			)}
+
+			<div
+				className="textbox"
+				style={
+					collisionItem === "win"
+						? { display: "none" }
+						: { display: "block" }
+				}
+			>
 				{collisionItem === "immersingEnglishDocumentationCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags hashtags={["design", "user-stories", "documentation"]} />
@@ -703,6 +843,21 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							hehe
 						</p>
 						<p>Thanks for inspiring me to build this project!</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "futureStateCOIN" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<p>
+							This project was a ton of fun but there is so much more I want to
+							add!
+						</p>
+						<p>
+							For example I would love to add lives/ damage, more interactive
+							problems and riddles, a bigger map, a better main-menu, and
+							multi-player!
+						</p>
 					</div>
 				) : (
 					""
