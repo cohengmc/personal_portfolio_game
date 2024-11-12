@@ -68,4 +68,16 @@ export default function loadSriteCharacters() {
       "walk-up": { from: 6, to: 7, loop: true, speed: 3 },
     },
   });
+  k.loadSprite("Nick_Sprite", "./nicks_sprite.png", {
+    sliceX: 6,
+    sliceY: 1,
+    anims: {
+      "idle-down": { from: 0, to: 1, loop: true, speed: 2 },
+      "walk-down": { from: 0, to: 1, loop: true, speed: 3 },
+      "idle-side": { from: 2, to: 3, loop: true, speed: 2 },
+      "walk-side": { from: 2, to: 3, loop: true, speed: 4 },
+      "idle-up": { from: 4, to: 5, loop: true, speed: 2 },
+      "walk-up": { from: 4, to: 5, loop: true, speed: 3 },
+    },
+  });
 }
