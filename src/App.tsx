@@ -131,7 +131,7 @@ function App() {
 					/>
 					<img
 						className="heartLogo"
-						src="./icons/Heart_8bit_Empty.png"
+						src="./icons/Heart_8bit_Full.png"
 						alt="heart icon"
 					/>
 				</div>
