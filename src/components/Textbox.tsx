@@ -89,20 +89,28 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 					""
 				)}
 				{collisionItem === "trackJumpPhotoCOIN" ? (
-					<div className="image-left-container">
-						<div className="image-gallery-1">
+					<div className="multiple-image-container">
+						<div className="image-gallery-3">
 							<img
 								className="ui-image"
 								src="./images/workout/highSchoolJump.png"
 								alt="Geoff Triple Jumping"
 								style={{ maxWidth: "30rem" }}
 							/>
+							<img
+								className="ui-image"
+								src="./images/workout/collegeHurdles.png"
+								alt="Geoff hurdles"
+								style={{ maxWidth: "30rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/workout/marathon.jpeg"
+								alt="Geoff nyc marathon"
+								style={{ maxWidth: "30rem" }}
+							/>
 						</div>
-						<p>
-							I've always had a passion for athletics. Here I am competing in
-							triple jump, a track and field event, his senior year of high
-							school.
-						</p>
+						<p>I've always had a passion for athletics! From basketball as a kid, to track and field in high school and college, to running the New York City Marathon!</p>
 					</div>
 				) : (
 					""
@@ -601,7 +609,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 
 				{collisionItem === "spritesCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
-						<Hashtags hashtags={["art", "creativity", "fun"]} />
+						<Hashtags hashtags={["art", "creativity"]} />
 						<div
 							className="image-gallery-1"
 							style={{ display: "flex", justifyContent: "center" }}
