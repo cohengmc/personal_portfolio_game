@@ -3,6 +3,7 @@ import { k } from "./kaboomCtx";
 import React, { useEffect, useState, useRef } from "react";
 import Textbox from "./components/Textbox";
 import { getDLItemTotal } from "./game/utils";
+import { INTERACTIVEVOLUME } from "./constants";
 
 function App() {
 	const [collisionItem, setCollisionItem] = useState("");
@@ -41,6 +42,7 @@ function App() {
 					setItemsFound(temp);
 					setCoins(coins + 50);
 					const audio = new Audio("./sounds/coin.mp3");
+					audio.volume = INTERACTIVEVOLUME;
 					if (muted) audio.play();
 				}
 			}
@@ -106,7 +108,8 @@ function App() {
 				/>
 			</div>
 			<div className="noteAndLives">
-				<p className="note">Tap/Click around to move</p>
+				{/* <p className="note">Tap/Click around to move</p> */}
+				<p className="note">Use the keyboard to move around</p>
 				<div className="lifeContainer">
 					<img
 						className="heartLogo"

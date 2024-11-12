@@ -397,31 +397,271 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				)}
 				{collisionItem === "framerTrackerDL" ? (
 					<div className="multiple-image-container">
+						<Hashtags hashtags={["Web-dev", "ui/ux", "react", "front-end"]} />
+						<div className="image-gallery-2">
+							<img
+								className="ui-image"
+								src="./images/workout/trackerUI/demoUI.png"
+								alt="workout tracker demo UI"
+								style={{ width: "auto", maxHeight: "15em" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/workout/trackerUI/demoComponents.png"
+								alt="workout tracker demo components"
+								style={{ height: "30rem", width: "auto" }}
+							/>
+						</div>
+						<p>
+							I've begun wireframing and constructing the component library for
+							a mobile app that will present the data once it has been collected
+							and stored.
+						</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "astroboticDL" ? (
+					<div className="image-left-container">
+						<div className="image-gallery-1">
+							<img
+								className="ui-image"
+								src="https://www.nasa.gov/wp-content/uploads/2019/11/cmu_lunar_rover.jpg"
+								alt="cuberover"
+								style={{ maxWidth: "30rem" }}
+							/>
+						</div>
+						<p>
+							Geoff spent a couple weeks (Summer 2019) helping out at the CMU
+							robotics lab on a project called Cuberover (now Astrobotic)
+						</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "armyDL" ? (
+					<div className="multiple-image-container">
 						<Hashtags
 							hashtags={[
-								"Web-dev",
-								"ui/ux",
-								"react",
-								"front-end",
+								"communication",
+								"collaboration",
+								"fast-paced-team-environment",
 							]}
 						/>
 						<div className="image-gallery-2">
 							<img
 								className="ui-image"
-								src="./images/workout/trackerUI/demoUI.png"
-								alt="esp32 with IMU"
-								style={{ width:"auto", maxHeight: "15em" }}
+								src="./images/community/armyFitness.png"
+								alt="army fitness"
+								style={{ maxWidth: "20rem" }}
 							/>
 							<img
 								className="ui-image"
-								src="./images/workout/trackerUI/demoComponents.png"
+								src="./images/community/armyFTX.png"
+								alt="army ftx"
+								style={{ maxWidth: "20rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/community/armyTeam.jpg"
 								alt="esp32 on pullup diagram"
-								style={{ height:"30rem", width: "auto",  }}
+								style={{ maxWidth: "20rem" }}
 							/>
 						</div>
 						<p>
-							I've begun wireframing and constructing the component library for a mobile app that will present the data once it has been collected and stored.
+							Four years of Army ROTC, including summer training at Fort Knox,
+							taught me many lessons about teamwork, communication, and
+							leadership.
 						</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "spanishDL" ? (
+					<div className="multiple-image-container">
+						<Hashtags hashtags={["communication", "community", "teamwork"]} />
+						<div className="image-gallery-3">
+							<img
+								className="ui-image"
+								src="./images/community/spanishPeru.jpg"
+								alt="family mexico"
+								style={{ maxWidth: "20rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/community/spanishCamino.JPG"
+								alt="camino"
+								style={{ maxWidth: "20rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/community/spanishFamilyMexico.JPG"
+								alt="peru"
+								style={{ maxWidth: "20rem" }}
+							/>
+						</div>
+						<p>
+							Learning Spanish has changed how I see and communicate with the
+							world around me. I have been lucky to learn from a foreign
+							exchange in Mexico, studying while aborad, and volunteering to
+							teach with an English as second language program.
+						</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "trackDL" ? (
+					<div className="multiple-image-container">
+						<Hashtags hashtags={["teamwork", "community"]} />
+						<div className="image-gallery-2">
+							<img
+								className="ui-image"
+								src="./images/community/trackWinchesterTeam.png"
+								alt="WT track"
+								style={{ maxWidth: "25rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/community/trackRoseTeam.png"
+								alt="rose track"
+								style={{ maxWidth: "40rem" }}
+							/>
+						</div>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "pittDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags hashtags={["community", "pittsburgh", "family"]} />
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="./images/community/pittFamily.JPEG"
+								alt="family"
+								style={{ maxWidth: "30rem" }}
+							/>
+						</div>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "backwardsDesignDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags
+							hashtags={["understanding-by-design", "4-freedoms-of-play"]}
+						/>
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="./images/portfolio/backwardDesign.png"
+								alt="backward design"
+								style={{ maxWidth: "30rem" }}
+							/>
+						</div>
+					</div>
+				) : (
+					""
+				)}
+
+				{collisionItem === "spritesDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags hashtags={["art", "creativity", "fun"]} />
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="./images/portfolio/libresprite.png"
+								alt="sprites"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
+						<p>Making the sprites was a ton of fun :)</p>
+					</div>
+				) : (
+					""
+				)}
+
+				{collisionItem === "kaplayDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags hashtags={["vanilla-js", "web-dev", "software"]} />
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="https://kaplayjs.com/_astro/kaplay-banner.SYsC3YBq_ZO4Fh7.webp"
+								alt="kaplay"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
+						<p>
+							Learning this new was a ton of fun! I had no idea it existed. This
+							is the first 'video game' I've made! :)
+						</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "sprintDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags hashtags={["engineering", "sprint"]} />
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="./images/portfolio/sprint.jpeg"
+								alt="sprint"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
+						<p>
+							I used an agile/ scrum like management system to organize and
+							prioritize my tasks
+						</p>
+						<p>(Using cutting edge tech called sticky notes and cardboard)</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "tiledDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<Hashtags hashtags={["art", "creativity"]} />
+						<div
+							className="image-gallery-1"
+							style={{ display: "flex", justifyContent: "center" }}
+						>
+							<img
+								className="ui-image"
+								src="./images/portfolio/tiled.png"
+								alt="sprint"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
+						<p>Woah meta map inside this map...</p>
+						<p>Making the maps was super fun! Its kinda like Minecraft</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "funDL" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<p>
+							This dinosaur has no real relevance. Just thought it looked cool!
+							hehe
+						</p>
+						<p>Thanks for inspiring me to build this project!</p>
 					</div>
 				) : (
 					""

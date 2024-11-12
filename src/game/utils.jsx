@@ -1,4 +1,4 @@
-import { SCALEFACTOR, CAMSCALE } from "../constants";
+import { SCALEFACTOR, CAMSCALE, INTERACTIVEVOLUME } from "../constants";
 import { mouseMovementHelper } from "./movement";
 import gsap from "gsap";
 import { k } from "../kaboomCtx";
@@ -51,7 +51,7 @@ export function sceneHelper(k, player) {
   });
 
   player.setControls();
-  mouseMovementHelper(k, player);
+  // mouseMovementHelper(k, player);
 }
 
 export function deepLocalSpawnHelper(k, layer, map) {
@@ -80,7 +80,7 @@ export function deepLocalSpawnHelper(k, layer, map) {
 export function fadeToNewScene(player, scene, spawnName) {
   player.isSpawning = true;
   gsap.to("#app", { opacity: 0 });
-  k.play("levelUp", { volume: 0.25 });
+  k.play("levelUp", { volume: INTERACTIVEVOLUME });
   setTimeout(() => {
     k.go(scene, spawnName);
   }, 2000);

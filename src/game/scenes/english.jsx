@@ -49,7 +49,7 @@ export default async function englishScene(spawn) {
           player.onCollide(boundary.name, () => {
             player.collisionItem = boundary.name;
             if (boundary.name === "doorHome") {
-              fadeToNewScene(player, "home", "spawnDoorProjects");
+              // fadeToNewScene(player, "home", "spawnDoorProjects");
             } else if (boundary.name === "doorPortfolio") {
               fadeToNewScene(player, "portfolio", "spawnEnglish");
             } else if (boundary.name === "doorWorkout") {

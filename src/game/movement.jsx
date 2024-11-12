@@ -1,5 +1,6 @@
 // Have character stop animating when no longer moving
 export function releaseHelper(player) {
+  player.inMotion = false;
   if (player.direction === "down") {
     player.play("idle-down");
     return;
@@ -14,21 +15,24 @@ export function releaseHelper(player) {
 
 // Actions to do to character when they are moving
 export function movementHelper(player, direction) {
-  let sideOrDirection = direction;
-  if (direction === "right") {
-    sideOrDirection = "side";
-    player.flipX = false;
-  }
-  if (direction === "left") {
-    sideOrDirection = "side";
-    player.flipX = true;
-  } else {
-    player.flipX = false;
-  }
-  player.direction = direction;
+  if (!player.inMotion) {
+    player.inMotion = true;
+    let sideOrDirection = direction;
+    if (direction === "right") {
+      sideOrDirection = "side";
+      player.flipX = false;
+    }
+    if (direction === "left") {
+      sideOrDirection = "side";
+      player.flipX = true;
+    } else {
+      player.flipX = false;
+    }
+    player.direction = direction;
 
-  if (player.getCurAnim().name !== `walk-${sideOrDirection}`) {
-    player.play(`walk-${sideOrDirection}`);
+    if (player.getCurAnim().name !== `walk-${sideOrDirection}`) {
+      player.play(`walk-${sideOrDirection}`);
+    }
   }
 }
 
@@ -82,33 +86,33 @@ export function mouseMovementHelper(k, player) {
 // Character being moved by keyboard
 export function setControlsHelper(k, player) {
   setTimeout(() => {
-    // k.onButtonDown("up", () => {
-    //   if (!player.isSpawning) {
-    //     player.move(0, -player.speed);
-    //     movementHelper(player, "up");
-    //   }
-    // });
+    k.onButtonDown("up", () => {
+      if (!player.isSpawning) {
+        player.move(0, -player.speed);
+        movementHelper(player, "up");
+      }
+    });
 
-    // k.onButtonDown("down", () => {
-    //   if (!player.isSpawning) {
-    //     player.move(0, player.speed);
-    //     movementHelper(player, "down");
-    //   }
-    // });
+    k.onButtonDown("down", () => {
+      if (!player.isSpawning) {
+        player.move(0, player.speed);
+        movementHelper(player, "down");
+      }
+    });
 
-    // k.onButtonDown("right", () => {
-    //   if (!player.isSpawning) {
-    //     player.move(player.speed, 0);
-    //     movementHelper(player, "right");
-    //   }
-    // });
+    k.onButtonDown("right", () => {
+      if (!player.isSpawning) {
+        player.move(player.speed, 0);
+        movementHelper(player, "right");
+      }
+    });
 
-    // k.onButtonDown("left", () => {
-    //   if (!player.isSpawning) {
-    //     player.move(-player.speed, 0);
-    //     movementHelper(player, "left");
-    //   }
-    // });
+    k.onButtonDown("left", () => {
+      if (!player.isSpawning) {
+        player.move(-player.speed, 0);
+        movementHelper(player, "left");
+      }
+    });
 
     k.onButtonRelease(() => {
       releaseHelper(player);

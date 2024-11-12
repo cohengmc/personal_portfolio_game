@@ -55,6 +55,8 @@ p {
     display: flex;
     gap: 1rem;
     align-items: center;
+    user-select: none;
+
 }
 
 .note {
@@ -79,6 +81,8 @@ p {
 
 .icon {
     width: 2rem;
+    pointer-events: none;
+
 }
 
 .gameDataBox {
@@ -117,18 +121,28 @@ p {
     padding: 1rem;
     gap: .25rem;
     color: gold;
+    user-select: none;
+    pointer-events: none;
+
 }
 
 .deepLocalLogo {
     width: 4rem;
+    user-select: none;
+    pointer-events: none;
+
 }
 
 .heartLogo {
     width: 2rem;
+    user-select: none;
+    pointer-events: none;
+
 }
 
 .ui-image {
     border-radius: 3px;
+    user-select: none;
 }
 
 .image-gallery-1,
