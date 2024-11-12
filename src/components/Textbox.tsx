@@ -109,7 +109,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						Congrats! You completed Geoff's Portfolio challenge!
 					</h1>
 					<h2>You win some 8-bit Deeplocal GIFs!</h2>
-					<div style={{ display: "flex", gap: "10rem"}}>
+					<div style={{ display: "flex", gap: "10rem" }}>
 						<img
 							className="ui-image"
 							src="./icons/Deeplocal_Logo.gif"
@@ -144,9 +144,9 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 			<div
 				className="textbox"
 				style={
-					collisionItem === "win"
-						? { display: "none" }
-						: { display: "block" }
+					collisionItem !== "instructions" && collisionItem !== "win"
+						? { display: "block" }
+						: { display: "none" }
 				}
 			>
 				{collisionItem === "immersingEnglishDocumentationCOIN" ? (
