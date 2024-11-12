@@ -97,12 +97,12 @@ export function deepLocalSpawnHelper(k, layer, map) {
   }
 }
 
-export function fadeToNewScene(player, scene, spawnName) {
+export function fadeToNewScene(player, scene, spawnName, portfolio) {
   player.isSpawning = true;
   gsap.to("#app", { opacity: 0 });
   k.play("levelUp", { volume: INTERACTIVEVOLUME });
   setTimeout(() => {
-    k.go(scene, spawnName);
+    k.go(scene, spawnName, portfolio);
   }, 2000);
 }
 

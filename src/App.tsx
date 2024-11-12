@@ -12,6 +12,7 @@ function App() {
 	const [itemsFound, setItemsFound] = useState([]);
 	const [dlCount, setDLCount] = useState(0);
 	const [coins, setCoins] = useState(0);
+	const [isPortfolioMessage, setIsPortfolioMessage] = useState(false);
 	const audioRef = useRef(null);
 	const muteButtonRef = useRef(null);
 
@@ -31,6 +32,12 @@ function App() {
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			const hitItem = k.get("player")[0].collisionItem.toString();
+			if(hitItem === "noPortfolio"){
+				setIsPortfolioMessage(true);
+			}
+			if(hitItem !== "noPortfolio" && isPortfolioMessage){
+				setIsPortfolioMessage(false)
+			}
 			setCollisionItem(hitItem);
 			if (
 				hitItem.length > 0 &&
@@ -59,7 +66,7 @@ function App() {
 		};
 	}, [collisionItem, itemsFound, coins, muted, dlCount]);
 
-	console.log(itemsFound);
+	// console.log(itemsFound);
 
 	const playAudio = () => {
 		setMuted(!muted);
@@ -88,6 +95,9 @@ function App() {
 			</audio>
 			<Textbox
 				collisionItem={!collisionItem.includes("door") ? collisionItem : ""}
+			/>
+			<Textbox
+				collisionItem={isPortfolioMessage ? "noPortfolio" : ""}
 			/>
 			<div className="mute">
 				<div

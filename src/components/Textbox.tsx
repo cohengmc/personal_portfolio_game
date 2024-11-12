@@ -110,7 +110,11 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								style={{ maxWidth: "30rem" }}
 							/>
 						</div>
-						<p>I've always had a passion for athletics! From basketball as a kid, to track and field in high school and college, to running the New York City Marathon!</p>
+						<p>
+							I've always had a passion for athletics! From basketball as a kid,
+							to track and field in high school and college, to running the New
+							York City Marathon!
+						</p>
 					</div>
 				) : (
 					""
@@ -699,6 +703,16 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							hehe
 						</p>
 						<p>Thanks for inspiring me to build this project!</p>
+					</div>
+				) : (
+					""
+				)}
+				{collisionItem === "noPortfolio" ? (
+					<div className="multiple-image-container" style={{ width: "100%" }}>
+						<p>
+							This level hasn't been unlocked yet! Keep gathering more Deeplocal
+							logos to unlock!
+						</p>
 					</div>
 				) : (
 					""

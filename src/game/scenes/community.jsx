@@ -10,7 +10,7 @@ import {
 import { setControlsHelper } from "../movement";
 import gsap from "gsap";
 
-export default async function communityScene(spawn) {
+export default async function communityScene(spawn, portfolio) {
   gsap.to("#app", { opacity: 1 });
   k.loadSprite("map", "./mapCommunity.png");
   k.setBackground(k.Color.fromHex(BACKGROUNDCOLOR));
@@ -47,9 +47,9 @@ export default async function communityScene(spawn) {
           player.onCollide(boundary.name, () => {
             player.collisionItem = boundary.name;
             if (boundary.name === "doorWorkout") {
-              fadeToNewScene(player, "workout", "spawnCommunity");
+              fadeToNewScene(player, "workout", "spawnCommunity", portfolio);
             } else if (boundary.name === "doorPortfolio") {
-              fadeToNewScene(player, "portfolio", "spawnCommunity");
+              fadeToNewScene(player, "portfolio", "spawnCommunity", portfolio);
             }
           });
 
