@@ -105,16 +105,16 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 			)}
 			{collisionItem === "win" ? (
 				<div className="instruction-container">
-					<h1 className="no-margin">
+					<h1 className="no-margin" style={{textAlign:"center"}}>
 						Congrats! You completed Geoff's Portfolio challenge!
 					</h1>
 					<h2>You win some 8-bit Deeplocal GIFs!</h2>
-					<div style={{ display: "flex", gap: "10rem" }}>
+					<div style={{ display: "flex", gap: "10rem", pointerEvents: "auto"  }}>
 						<img
 							className="ui-image"
 							src="./icons/Deeplocal_Logo.gif"
 							alt="DL logo"
-							style={{ height: "8rem", width: "auto" }}
+							style={{ height: "8rem", width: "auto"}}
 						/>
 						<img
 							className="ui-image"
@@ -130,11 +130,11 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						/>
 					</div>
 					<h3 className="no-margin" style={{ justifySelf: "center" }}>
-						There is a prize reward if you collect{" "}
+						Thanks for{" "}
 						<span style={{ color: "gold", textShadow: "1px 1px 4px black" }}>
-							1500 coins
+							playing
 						</span>
-						!
+						! :)
 					</h3>
 				</div>
 			) : (
@@ -526,10 +526,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Recently I've been working to combine my passions for electronics
-							integration, web development, and athletics to create something
-							fun and innovative. This is my first prototype of set and rep
-							tracker during exercise.
+							This is my first prototype of set and rep
+							tracker used during exercise. Pretty simple, I know, but I'm still prototyping! It is an arduino micro, a couple buttons, and an LCD running a simple state machine to track workout data.
 						</p>
 					</div>
 				) : (
@@ -855,7 +853,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						</p>
 						<p>
 							For example I would love to add lives/ damage, more interactive
-							problems and riddles, a bigger map, a better main-menu, and
+							problems and riddles, a bigger map, a better main-menu, a cleaner UI, and
 							multi-player!
 						</p>
 					</div>
