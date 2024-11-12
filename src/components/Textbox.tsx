@@ -12,6 +12,27 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				{collisionItem === "immersingEnglishDocumentationCOIN" ? (
 					<div className="multiple-image-container">
 						<Hashtags hashtags={["design", "user-stories", "documentation"]} />
+						<div className="image-gallery-3">
+							<img
+								className="ui-image"
+								src="./images/english/documentation.png"
+								alt="english documenation layout"
+								style={{ maxHeight: "30rem", width: "auto" }}
+							/>
+
+							<img
+								className="ui-image"
+								src="./images/english/planning.png"
+								alt="english planning"
+								style={{ maxWidth: "50rem" }}
+							/>
+							<img
+								className="ui-image"
+								src="./images/english/components.png"
+								alt="english components"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
 						<p>
 							The{" "}
 							<a
@@ -39,6 +60,14 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						<Hashtags
 							hashtags={["react", "typescript", "UI/UX", "front-end", "framer"]}
 						/>
+						<div className="image-gallery-1">
+							<img
+								className="ui-image"
+								src="./images/english/website.png"
+								alt="english website"
+								style={{ maxWidth: "50rem" }}
+							/>
+						</div>
 						<p>
 							<a
 								href="https://immersing-english-2.framer.ai/"
@@ -70,8 +99,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I've always had a passion for athletics. Here I am competing
-							in triple jump, a track and field event, his senior year of high
+							I've always had a passion for athletics. Here I am competing in
+							triple jump, a track and field event, his senior year of high
 							school.
 						</p>
 					</div>
@@ -138,8 +167,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Me competing in 110m hurdles, a track and field event, his
-							senior year of college
+							Me competing in 110m hurdles, a track and field event, his senior
+							year of college
 						</p>
 					</div>
 				) : (
@@ -413,9 +442,9 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I've begun wireframing and constructing the react component library with Framer for
-							a mobile app that will present the data once it has been collected
-							and stored.
+							I've begun wireframing and constructing the react component
+							library with Framer for a mobile app that will present the data
+							once it has been collected and stored.
 						</p>
 					</div>
 				) : (
@@ -432,15 +461,15 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Fun fact: I spent a couple weeks (Summer 2019) helping out at the CMU
-							robotics lab on a project called Cuberover (now Astrobotic)
+							Fun fact: I spent a couple weeks (Summer 2019) helping out at the
+							CMU robotics lab on a project called Cuberover (now Astrobotic)
 						</p>
 					</div>
 				) : (
 					""
 				)}
 				{collisionItem === "armyDL" ? (
-					<div className="multiple-image-container" style={{width:"100%"}}>
+					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<Hashtags
 							hashtags={[
 								"communication",
@@ -502,9 +531,9 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						</div>
 						<p>
 							Learning Spanish has changed how I see and communicate with the
-							world around me. I have been lucky to learn from living in Mexico during a foreign
-							exchange (right), studying while aborad, and volunteering to
-							teach with an English as second language program.
+							world around me. I have been lucky to learn from living in Mexico
+							during a foreign exchange (right), studying while aborad, and
+							volunteering to teach with an English as second language program.
 						</p>
 					</div>
 				) : (
@@ -605,8 +634,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Learning this new library was a ton of fun! I had no idea it existed. This
-							is the first 'video game' I've made! :)
+							Learning this new library was a ton of fun! I had no idea it
+							existed. This is the first 'video game' I've made! :)
 						</p>
 					</div>
 				) : (
