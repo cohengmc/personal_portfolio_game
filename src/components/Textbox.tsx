@@ -17,7 +17,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								Objectives:
 							</h2>
 							<ol className="no-margin">
-								<li>Collect all of the Deeplocal logos!</li>
+								<li>Collect all of the Geoff logos!</li>
 								<li>Get as many coins as you can!</li>
 							</ol>
 							<ul className="no-margin">
@@ -35,20 +35,20 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						>
 							<img
 								className="ui-image"
-								src="./icons/Deeplocal_Logo.gif"
-								alt="english documenation layout"
+								src="./icons/geoff_character_thiq.gif"
+								alt="geoff logo"
 								style={{ height: "5rem", width: "auto" }}
 							/>
 
 							<img
 								className="ui-image"
 								src="./icons/Coin1.gif"
-								alt="english planning"
+								alt="coin spinning"
 								style={{ height: "2.5rem", width: "2.5rem" }}
 							/>
 						</div>
 					</div>
-					<div style={{ display: "flex", gap: "4rem" }}>
+					<div style={{ display: "flex", gap: "4rem", padding: "0 5rem" }}>
 						<div>
 							<h2 className="no-margin" style={{ justifySelf: "center" }}>
 								Rules:
@@ -57,16 +57,6 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								<li>Have fun!</li>
 								<li>Remember rule #1</li>
 							</ol>
-						</div>
-						<div>
-							<h2 className="no-margin" style={{ justifySelf: "center" }}>
-								Suggestions:
-							</h2>
-							<ul className="no-margin">
-								<li>Folllow along with Geoff</li>
-								<li>Remember rule #1</li>
-								<li>There are no rules</li>
-							</ul>
 						</div>
 						<div>
 							<h2 className="no-margin" style={{ justifySelf: "center" }}>

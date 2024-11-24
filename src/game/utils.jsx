@@ -58,7 +58,7 @@ export function deepLocalSpawnHelper(k, layer, map) {
   if (layer.name === "deeplocalSpawns") {
     for (const entity of layer.objects) {
       k.add([
-        k.sprite("dl_logo", { anim: "spin-logo" }),
+        k.sprite("geoff_logo", { anim: "peace-logo" }),
         k.area({
           shape: new k.Rect(k.vec2(0, 3), 0, 0),
         }),
@@ -66,11 +66,11 @@ export function deepLocalSpawnHelper(k, layer, map) {
         k.anchor("center"),
         k.pos(
           k.vec2(
-            (map.pos.x + entity.x) * SCALEFACTOR + 1 * SCALEFACTOR,
-            (map.pos.y + entity.y) * SCALEFACTOR - 12 * SCALEFACTOR
+            (map.pos.x + entity.x) * SCALEFACTOR + 3 * SCALEFACTOR,
+            (map.pos.y + entity.y) * SCALEFACTOR - 14 * SCALEFACTOR
           )
         ),
-        k.scale(SCALEFACTOR * 0.75),
+        k.scale(SCALEFACTOR * 0.065),
         "logo",
       ]);
     }

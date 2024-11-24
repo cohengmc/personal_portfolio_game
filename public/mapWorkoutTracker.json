@@ -478,7 +478,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -514,7 +514,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
@@ -532,8 +532,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":295.333333333333,
-                 "y":130.666666666667
+                 "x":307.00421448486,
+                 "y":134.556960383843
                 }, 
                 {
                  "height":0,
@@ -544,8 +544,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":127,
-                 "y":208
+                 "x":116.301692277767,
+                 "y":206.054853141412
                 }, 
                 {
                  "height":0,
@@ -557,7 +557,7 @@
                  "visible":true,
                  "width":0,
                  "x":167.333333333333,
-                 "y":63.3333333333333
+                 "y":57.9841794722168
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -608,7 +608,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
@@ -654,7 +654,7 @@
         }, 
         {
          "firstgid":4835,
-         "source":"..\/..\/sprites\/dl_sprite.tsx"
+         "source":"..\/..\/portfolio_2d\/public\/dl_sprite.tsx"
         }],
  "tilewidth":16,
  "type":"map",

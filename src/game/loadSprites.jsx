@@ -14,6 +14,14 @@ export default function loadSriteCharacters() {
     },
   });
 
+  k.loadSprite("geoff_logo", "./geoff_character_thiq.png", {
+    sliceX: 2,
+    sliceY: 1,
+    anims: {
+      "peace-logo": { from: 0, to: 1, loop: true, speed: 2 },
+    },
+  });
+
   k.loadSprite("dl_sprite", "./Deeplocal_Friend_v1.png", {
     sliceX: 4,
     sliceY: 1,

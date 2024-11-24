@@ -34,9 +34,9 @@ export default function startGame() {
   k.scene("portfolio", portfolioScene);
 
   // Default Scene - go to Scene - Scene "Main"
-  k.go("english", "spawnDoor", false);
+  // k.go("english", "spawnDoor", false);
   // k.go("home", "spawn",false);
   // k.go("workout", "spawnEnglish", false);
   // k.go("community", "spawnWorkout", false);
-  // k.go("portfolio", "spawnCommunity", false)
+  k.go("portfolio", "spawnCommunity", false)
 }

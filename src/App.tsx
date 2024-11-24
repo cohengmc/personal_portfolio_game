@@ -169,8 +169,8 @@ function App() {
 				</p>
 				<img
 					className="deepLocalLogo"
-					src="./icons/Deeplocal_Logo.gif"
-					alt="dl icon"
+					src="./icons/geoff_character_thiq.gif"
+					alt="geoff_character icon"
 				/>
 			</div>
 			<div className="noteAndLives">
