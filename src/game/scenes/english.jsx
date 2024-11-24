@@ -23,7 +23,7 @@ export default async function englishScene(spawn, portfolio) {
   const portfolioItems = 2;
 
   const player = k.make([
-    k.sprite("dl_sprite", { anim: "idle-down" }),
+    k.sprite("Geoff_Sprite", { anim: "idle-down" }),
     k.area({
       shape: new k.Rect(k.vec2(0, 3), 10, 10),
     }),

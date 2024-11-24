@@ -95,28 +95,35 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 			)}
 			{collisionItem === "win" ? (
 				<div className="instruction-container">
-					<h1 className="no-margin" style={{textAlign:"center"}}>
+					<h1 className="no-margin" style={{ textAlign: "center" }}>
 						Congrats! You completed Geoff's Portfolio challenge!
 					</h1>
-					<h2>You win some 8-bit Deeplocal GIFs!</h2>
-					<div style={{ display: "flex", gap: "10rem", pointerEvents: "auto"  }}>
+					<h2>You win some Geoff GIFs!</h2>
+					<div
+						style={{
+							display: "flex",
+							gap: "1rem",
+							alignItems: "center",
+							pointerEvents: "auto",
+						}}
+					>
 						<img
 							className="ui-image"
-							src="./icons/Deeplocal_Logo.gif"
-							alt="DL logo"
-							style={{ height: "8rem", width: "auto"}}
+							src="./icons/Geoff_Sprite_Bounce.gif"
+							alt="geoff walk"
+							style={{ height: "4rem", width: "auto" }}
 						/>
 						<img
 							className="ui-image"
-							src="./icons/Deeplocal_building.png"
-							alt="DL building"
-							style={{ height: "8rem", width: "auto" }}
+							src="./icons/geoff_character_thiq.gif"
+							alt="geoff logo"
+							style={{ height: "10rem", width: "10rem" }}
 						/>
 						<img
 							className="ui-image"
-							src="./icons/Deeplocal_Friend_v1.gif"
-							alt="coin"
-							style={{ height: "8rem", width: "auto" }}
+							src="./icons/Geoff_Sprite_Walk.gif"
+							alt="geoff bounce"
+							style={{ height: "4rem", width: "auto" }}
 						/>
 					</div>
 					<h3 className="no-margin" style={{ justifySelf: "center" }}>
@@ -309,7 +316,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Me competing in 110m hurdles, a track and field event, his senior
+							Geoff competing in 110m hurdles, a track and field event, his senior
 							year of college
 						</p>
 					</div>
@@ -516,8 +523,10 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							This is my first prototype of set and rep
-							tracker used during exercise. Pretty simple, I know, but I'm still prototyping! It is an arduino micro, a couple buttons, and an LCD running a simple state machine to track workout data.
+							This is my first prototype of set and rep tracker used during
+							exercise. Pretty simple, but it's still in a prototyping phase! It
+							is an arduino micro, a couple buttons, and an LCD running a simple
+							state machine to track workout data.
 						</p>
 					</div>
 				) : (
@@ -572,7 +581,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								className="ui-image"
 								src="./images/workout/trackerUI/demoUI.png"
 								alt="workout tracker demo UI"
-								style={{ width: "auto", maxHeight: "15em" }}
+								style={{ width: "auto", maxHeight: "10em" }}
 							/>
 							<img
 								className="ui-image"
@@ -601,8 +610,9 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Fun fact: I spent a couple weeks (Summer 2019) helping out at the
-							CMU robotics lab on a project called Cuberover (now Astrobotic)
+							Fun fact: Geoff spent a couple weeks (Summer 2019) helping out at
+							the CMU robotics lab on a project called Cuberover (now
+							Astrobotic)
 						</p>
 					</div>
 				) : (
@@ -639,7 +649,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 						</div>
 						<p>
 							Four years of Army ROTC, including summer training at Fort Knox,
-							taught me many lessons about teamwork, communication, and
+							taught Geoff many lessons about teamwork, communication, and
 							leadership.
 						</p>
 					</div>
@@ -670,10 +680,11 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Learning Spanish has changed how I see and communicate with the
-							world around me. I have been lucky to learn from living in Mexico
-							during a foreign exchange (right), studying while aborad, and
-							volunteering to teach with an English as second language program.
+							Learning Spanish has changed how Geoff sees and communicates with
+							the world around him. He has been lucky to learn from living in
+							Mexico during a foreign exchange (right), studying while aborad,
+							and volunteering to teach with an English as second language
+							program.
 						</p>
 					</div>
 				) : (
@@ -696,6 +707,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								style={{ maxWidth: "40rem" }}
 							/>
 						</div>
+						<p>Being part of a team is so important and it's where the best work happens!</p>
 					</div>
 				) : (
 					""
@@ -714,6 +726,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								style={{ maxWidth: "30rem" }}
 							/>
 						</div>
+						<p>Had to give a shoutout to the fam! Wouldn't be anywhere without them!</p>
 					</div>
 				) : (
 					""
@@ -734,6 +747,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 								style={{ maxWidth: "30rem" }}
 							/>
 						</div>
+						<p>Geoff hope's you had fun checking out his portfolio! (If you did it wasn't be accident :) hehe)</p>
 					</div>
 				) : (
 					""
@@ -774,8 +788,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							Learning this new library was a ton of fun! I had no idea it
-							existed. This is the first 'video game' I've made! :)
+							Learning this new library was a ton of fun! Geoff had no idea it
+							existed. This is the first 'video game' he's made! :)
 						</p>
 					</div>
 				) : (
@@ -796,8 +810,8 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							/>
 						</div>
 						<p>
-							I used an agile/ scrum like management system to organize and
-							prioritize my tasks
+							Geoff uses an agile/ scrum like management system to organize and
+							prioritize his tasks for projects like this one!
 						</p>
 						<p>(Using cutting edge tech called sticky notes and cardboard)</p>
 					</div>
@@ -830,7 +844,6 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 							This dinosaur has no real relevance. Just thought it looked cool!
 							hehe
 						</p>
-						<p>Thanks for inspiring me to build this project!</p>
 					</div>
 				) : (
 					""
@@ -838,13 +851,13 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				{collisionItem === "futureStateCOIN" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<p>
-							This project was a ton of fun but there is so much more I want to
-							add!
+							This project was a ton of fun but there is so much more Geoff is
+							in the proccess of adding!
 						</p>
 						<p>
-							For example I would love to add lives/ damage, more interactive
-							problems and riddles, a bigger map, a better main-menu, a cleaner UI, and
-							multi-player!
+							For example he is working on adding lives/ damage, more
+							interactive problems and riddles, a bigger map, a better
+							main-menu, a cleaner UI, and multi-player!
 						</p>
 					</div>
 				) : (
@@ -853,7 +866,7 @@ const Textbox = ({ collisionItem }: { collisionItem: string }) => {
 				{collisionItem === "noPortfolio" ? (
 					<div className="multiple-image-container" style={{ width: "100%" }}>
 						<p>
-							This level hasn't been unlocked yet! Keep gathering more Deeplocal
+							This level hasn't been unlocked yet! Keep gathering more Geoff
 							logos to unlock!
 						</p>
 					</div>

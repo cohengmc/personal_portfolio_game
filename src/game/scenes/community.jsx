@@ -21,7 +21,7 @@ export default async function communityScene(spawn, portfolio) {
   const map = k.add([k.sprite("map"), k.pos(0), k.scale(SCALEFACTOR)]);
 
   const player = k.make([
-    k.sprite("Nick_Sprite", { anim: "idle-down" }),
+    k.sprite("Geoff_Sprite", { anim: "idle-down" }),
     k.area({
       shape: new k.Rect(k.vec2(0, 3), 10, 10),
     }),
